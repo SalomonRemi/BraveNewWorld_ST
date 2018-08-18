@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: b5757e888f0ffba4a931ce157c04a73a
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bake
+    100002: Base_low
+    100004: BigPillow_low
+    100006: //RootNode
+    100008: Chair_gameasset
+    100010: Chair_gameasset_ChairSupport_low
+    100012: Chair_gameasset_Wheel_low_01
+    100014: Chair_low8879
+    100016: ChairSupport_low
+    100018: ConnectorBottom_low
+    100020: ConnectorTop_low
+    100022: ConnectorWheel_low_01
+    100024: ConnectorWheel_low_02
+    100026: ConnectorWheel_low_03
+    100028: SmallPillow_low
+    100030: SupportWheel_low_01
+    100032: SupportWheel_low_02
+    100034: SupportWheel_low_03
+    100036: transform65
+    100038: transform66
+    100040: transform67
+    100042: transform68
+    100044: transform69
+    100046: transform70
+    100048: transform71
+    100050: transform72
+    100052: transform73
+    100054: transform74
+    100056: transform75
+    100058: transform76
+    100060: transform77
+    100062: transform78
+    100064: transform79
+    100066: Wheel_low_01
+    100068: Wheel_low_02
+    100070: Wheel_low_03
+    400000: Bake
+    400002: Base_low
+    400004: BigPillow_low
+    400006: //RootNode
+    400008: Chair_gameasset
+    400010: Chair_gameasset_ChairSupport_low
+    400012: Chair_gameasset_Wheel_low_01
+    400014: Chair_low8879
+    400016: ChairSupport_low
+    400018: ConnectorBottom_low
+    400020: ConnectorTop_low
+    400022: ConnectorWheel_low_01
+    400024: ConnectorWheel_low_02
+    400026: ConnectorWheel_low_03
+    400028: SmallPillow_low
+    400030: SupportWheel_low_01
+    400032: SupportWheel_low_02
+    400034: SupportWheel_low_03
+    400036: transform65
+    400038: transform66
+    400040: transform67
+    400042: transform68
+    400044: transform69
+    400046: transform70
+    400048: transform71
+    400050: transform72
+    400052: transform73
+    400054: transform74
+    400056: transform75
+    400058: transform76
+    400060: transform77
+    400062: transform78
+    400064: transform79
+    400066: Wheel_low_01
+    400068: Wheel_low_02
+    400070: Wheel_low_03
+    2100000: UVCheckerMap01_1024_1Material
+    2300000: Chair_gameasset_ChairSupport_low
+    2300002: Chair_gameasset_Wheel_low_01
+    3300000: Chair_gameasset_ChairSupport_low
+    3300002: Chair_gameasset_Wheel_low_01
+    4300000: Chair_gameasset_ChairSupport_low
+    4300002: Chair_gameasset_Wheel_low_01
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
