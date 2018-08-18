@@ -1,0 +1,138 @@
+fileFormatVersion: 2
+guid: 3e7506f3eb909b24688df1d9b27b480a
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Briefcase_low
+    100004: Briefcase_top_low
+    100006: Briefcase_top_low 1
+    100008: Btm_low
+    100010: DroitBas_low
+    100012: droitehaut_low
+    100014: gauchebas_low
+    100016: gauchehaut_low
+    100018: leatherpocket_low
+    100020: poignee_low
+    100022: poignee_low 1
+    100024: tienpoignee_low
+    100026: transform1580
+    100028: transform1581
+    100030: transform1582
+    100032: transform1583
+    100034: transform1584
+    100036: transform1585
+    100038: transform1586
+    100040: transform1587
+    100042: transform1588
+    400000: //RootNode
+    400002: Briefcase_low
+    400004: Briefcase_top_low
+    400006: Briefcase_top_low 1
+    400008: Btm_low
+    400010: DroitBas_low
+    400012: droitehaut_low
+    400014: gauchebas_low
+    400016: gauchehaut_low
+    400018: leatherpocket_low
+    400020: poignee_low
+    400022: poignee_low 1
+    400024: tienpoignee_low
+    400026: transform1580
+    400028: transform1581
+    400030: transform1582
+    400032: transform1583
+    400034: transform1584
+    400036: transform1585
+    400038: transform1586
+    400040: transform1587
+    400042: transform1588
+    2100000: Sel_Blue
+    2300000: Briefcase_top_low
+    2300002: poignee_low
+    3300000: Briefcase_top_low
+    3300002: poignee_low
+    4300000: Briefcase_top_low
+    4300002: poignee_low
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
