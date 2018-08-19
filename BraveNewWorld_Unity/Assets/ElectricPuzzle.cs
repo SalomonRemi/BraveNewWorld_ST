@@ -35,24 +35,13 @@ public class ElectricPuzzle : MonoBehaviour {
             multiplicationResult = multiplicationResult * sliderList[i].realSliderValue;
         }
 
-        text.text = multiplicationResult.ToString();
+
+        if(multiplicationResult == 1)
+        {
+            text.text = "0";
+        }
+        else text.text = multiplicationResult.ToString();
 
 
-        if(multiplicationResult == megaphoneCode)
-        {
-            //IL SE PASSE UN TRUC
-        }
-        else if (multiplicationResult == radioCode)
-        {
-            //IL SE PASSE UN TRUC
-        }
-        else if (multiplicationResult == alarmCode)
-        {
-            //IL SE PASSE UN TRUC
-        }
-        else if (multiplicationResult == digicodeCode)
-        {
-            //IL SE PASSE UN TRUC
-        }
     }
 }
