@@ -137,18 +137,19 @@ public class MissionManager : MonoBehaviour {
 
     private void Update()
     {
-   //     if(Input.GetKeyDown(KeyCode.M))
-   //     {
-   //         StopAllCoroutines();
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            StopAllCoroutines();
 
-   //         AudioManager.instance.StopMusic();
+            AudioManager.instance.StopMusic();
 
-   //         StartCoroutine(startMission());
+            //StartCoroutine(startMission());
+            StartCoroutine(mission5());
 
-			//player.transform.position = debugTransform.position;
-   //     }
+            player.transform.position = debugTransform.position;
+        }
 
-        if(doScrolling)
+        if (doScrolling)
         {
             counter += Time.deltaTime;
 
@@ -207,8 +208,8 @@ public class MissionManager : MonoBehaviour {
 
         Destroy(tutoMoveObject);
 
-        yield return new WaitForSeconds(3f);
-
+        yield return new WaitForSeconds(10f);
+        // ADD SOMETHING WITH TRIGGER
 		Dialogue dialogue2 = new Dialogue();
 		dialogue2.sentences.Add("Ne vous laissez pas impressionner par cette théâtralité, vous vous y habituerez vite.");
 		dialogue2.sentences.Add("Soyez le bienvenue Wilson, vous êtes ici chez vous.");
@@ -224,8 +225,8 @@ public class MissionManager : MonoBehaviour {
 		Dialogue dialogueOrdre = new Dialogue();
 		dialogueOrdre.sentences.Add("Allez y je vous prie.");
 
-        hallDoorAnim.SetBool("Open", true);
-        AudioManager.instance.PlaySound("doorOpen");
+        //hallDoorAnim.SetBool("Open", true);
+        //AudioManager.instance.PlaySound("doorOpen");
 
         yield return new WaitForSeconds(1f);
 
@@ -561,8 +562,6 @@ public class MissionManager : MonoBehaviour {
         yield return new WaitForSeconds(16f);
 
         commandPanel.SetBool("isDigicodeAvailable", true);
-
-		oscarOrderText.text = "Trouvez l'identifiant du responsable de la disparition d'Oscar.";
         
 		while (!finishedStep01)
         {

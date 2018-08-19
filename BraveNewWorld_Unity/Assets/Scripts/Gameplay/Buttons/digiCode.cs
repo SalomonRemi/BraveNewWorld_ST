@@ -10,8 +10,6 @@ public class digiCode : MonoBehaviour {
     public float keycode;
 
     bool code1Used = false;
-    public Animator tiroir;
-    public Animator door;
 
     public ExePuzzle ep;
 
@@ -24,7 +22,7 @@ public class digiCode : MonoBehaviour {
 
         enabledAmmount = 0;
 
-		keycode = 0f;
+		keycode = 0;
     }
 
 
