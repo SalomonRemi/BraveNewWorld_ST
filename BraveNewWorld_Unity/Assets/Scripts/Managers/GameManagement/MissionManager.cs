@@ -62,6 +62,8 @@ public class MissionManager : MonoBehaviour {
     [HideInInspector] public bool canStartExePuzzle;
     [HideInInspector] public bool isInLastPuzzle;
 
+    [HideInInspector] public bool isInVents;
+
     public TextMeshPro recapText;
 	public TextMeshPro oscarOrderText;
     public flipSwitch flipper;
@@ -161,6 +163,13 @@ public class MissionManager : MonoBehaviour {
 				Instantiate(usinePrefabList[Random.Range(0, 3)], instantiateTransform.position, Quaternion.Euler(new Vector3(-180,-135,0)));
                 counter = 0;
             }
+        }
+
+        if(isInVents)
+        {
+            StopAllCoroutines();
+            doorNums.Clear();
+            resestMission();
         }
     }
 
