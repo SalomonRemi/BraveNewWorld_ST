@@ -31,6 +31,7 @@ public class MissionManager : MonoBehaviour {
     [HideInInspector] public bool goToNextStep;
     [HideInInspector] public bool isInElevator;
     [HideInInspector] public bool isInHall;
+    [HideInInspector] public bool enterInHall;
     [HideInInspector] public bool enterInRoom;
     [HideInInspector] public bool closeDoor;
 	[HideInInspector] public bool isAtDesk;
@@ -46,6 +47,7 @@ public class MissionManager : MonoBehaviour {
     [Range(60f,360f)] public float timeBeforeHint;
     public Animator levier;
     public Animator commandPanel;
+    public Animator bedroomDoor;
 
 	public digiCode digicode;
 	public Keypad keypad;
@@ -64,6 +66,7 @@ public class MissionManager : MonoBehaviour {
 	public TextMeshPro oscarOrderText;
     public flipSwitch flipper;
     public TextMeshPro digiTxt;
+
 
 
 	[Header("Other Settings")]
@@ -127,7 +130,7 @@ public class MissionManager : MonoBehaviour {
         ep = GetComponent<ExePuzzle>();
 
         StartCoroutine(startIntroduction());
-        StartCoroutine(scrollingBabies());
+        //StartCoroutine(scrollingBabies());
 
 		agent.SetActive (false);
 
@@ -144,7 +147,7 @@ public class MissionManager : MonoBehaviour {
             AudioManager.instance.StopMusic();
 
             //StartCoroutine(startMission());
-            StartCoroutine(mission5());
+            StartCoroutine(mission4());
 
             player.transform.position = debugTransform.position;
         }
@@ -208,9 +211,18 @@ public class MissionManager : MonoBehaviour {
 
         Destroy(tutoMoveObject);
 
-        yield return new WaitForSeconds(10f);
-        // ADD SOMETHING WITH TRIGGER
-		Dialogue dialogue2 = new Dialogue();
+        yield return new WaitForSeconds(4f);
+
+        while (goToNextStep)
+        {
+            if (enterInHall)
+            {
+                goToNextStep = false;
+            }
+            yield return null;
+        }
+
+        Dialogue dialogue2 = new Dialogue();
 		dialogue2.sentences.Add("Ne vous laissez pas impressionner par cette théâtralité, vous vous y habituerez vite.");
 		dialogue2.sentences.Add("Soyez le bienvenue Wilson, vous êtes ici chez vous.");
 
@@ -220,7 +232,7 @@ public class MissionManager : MonoBehaviour {
         AudioManager.instance.PlayMusic("introDialog02");
 
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(15f);
 
 		Dialogue dialogueOrdre = new Dialogue();
 		dialogueOrdre.sentences.Add("Allez y je vous prie.");
@@ -231,11 +243,11 @@ public class MissionManager : MonoBehaviour {
         yield return new WaitForSeconds(1f);
 
 
-        while (goToNextStep)
+        while (!goToNextStep)
         {
             if (!isInHall)
             {
-                goToNextStep = false;
+                goToNextStep = true;
             }
             yield return null;
         }
@@ -251,20 +263,20 @@ public class MissionManager : MonoBehaviour {
 
         yield return new WaitForSeconds(5f);
 
-        while (!goToNextStep)
+        while (goToNextStep)
         {
             if (enterInRoom)
             {
-                goToNextStep = true;
+                goToNextStep = false;
             }
             yield return null;
         }
 
-        while (goToNextStep)
+        while (!goToNextStep)
         {
             if (closeDoor)
             {
-                goToNextStep = false;
+                goToNextStep = true;
             }
             yield return null;
         }
@@ -286,11 +298,11 @@ public class MissionManager : MonoBehaviour {
 
         yield return new WaitForSeconds(7f);
 
-		while (!goToNextStep)
+		while (goToNextStep)
 		{
 			if (isAtDesk)
 			{
-				goToNextStep = true;
+				goToNextStep = false;
 			}
 			yield return null;
 		}
@@ -504,7 +516,10 @@ public class MissionManager : MonoBehaviour {
 
         yield return new WaitForSeconds(2f);
 
-		while (!finishedLevel)
+        bedroomDoor.SetBool("open", true);
+        AudioManager.instance.PlaySound("doorOpen");
+
+        while (!finishedLevel)
 		{
             if (keyPadCorrect)
             {

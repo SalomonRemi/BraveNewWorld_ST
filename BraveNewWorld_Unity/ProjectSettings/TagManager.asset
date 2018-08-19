@@ -20,6 +20,7 @@ TagManager:
   - baby
   - babyKiller
   - slider
+  - powerButton
   layers:
   - Default
   - TransparentFX

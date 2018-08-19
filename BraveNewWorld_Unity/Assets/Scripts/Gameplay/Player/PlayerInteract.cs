@@ -26,6 +26,7 @@ public class PlayerInteract : MonoBehaviour {
     public string drawerVerb;
 	public string doorVerb;
     public string doorButtonVerb;
+    public string powerButtonVerb;
 
 
     private Vector3 prevSitpos;
@@ -86,6 +87,10 @@ public class PlayerInteract : MonoBehaviour {
                     {
                         hit.transform.gameObject.GetComponent<PuzzleSlider>().SliderInteraction();
                     }
+                    if (hit.transform.gameObject.CompareTag("powerButton"))
+                    {
+                        hit.transform.gameObject.GetComponent<ElectricPowerButton>().EnableObjects();
+                    }
                 }
 			} 
 		}
@@ -115,6 +120,7 @@ public class PlayerInteract : MonoBehaviour {
                 {
                     hit.transform.gameObject.GetComponent<DoorButton>().OpenDoor();
                 }
+
             }
         }
 
@@ -199,16 +205,16 @@ public class PlayerInteract : MonoBehaviour {
 
                     interactInputImage.gameObject.SetActive(true);
                 }
-                //else if (hitInfo.transform.gameObject.CompareTag("slider"))
-                //{
-                //    interactionObjectText.gameObject.SetActive(true);
-                //    interactionObjectText.text = "";
+                else if (hitInfo.transform.gameObject.CompareTag("powerButton"))
+                {
+                    interactionObjectText.gameObject.SetActive(true);
+                    interactionObjectText.text = "Electric power";
 
-                //    interactionVerbText.gameObject.SetActive(true);
-                //    interactionVerbText.text = doorButtonVerb;
+                    interactionVerbText.gameObject.SetActive(true);
+                    interactionVerbText.text = powerButtonVerb;
 
-                //    interactInputImage.gameObject.SetActive(true);
-                //}
+                    interactInputImage.gameObject.SetActive(true);
+                }
             }
             else
             {
