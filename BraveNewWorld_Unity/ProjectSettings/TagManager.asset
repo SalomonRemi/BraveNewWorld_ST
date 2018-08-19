@@ -19,6 +19,7 @@ TagManager:
   - lockDown
   - baby
   - babyKiller
+  - slider
   layers:
   - Default
   - TransparentFX

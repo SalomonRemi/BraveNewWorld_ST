@@ -82,6 +82,10 @@ public class PlayerInteract : MonoBehaviour {
 						hit.transform.gameObject.GetComponentInParent<LockerNum>().DecreaseNumber();
                         AudioManager.instance.PlaySound("lockerButton");
                     }
+                    if (hit.transform.gameObject.CompareTag("slider"))
+                    {
+                        hit.transform.gameObject.GetComponent<PuzzleSlider>().SliderInteraction();
+                    }
                 }
 			} 
 		}
@@ -154,7 +158,7 @@ public class PlayerInteract : MonoBehaviour {
                     interactInputImage.gameObject.SetActive(true);
 
                 }
-                if (hitInfo.transform.gameObject.CompareTag("drawer"))
+                else if (hitInfo.transform.gameObject.CompareTag("drawer"))
                 {
                     interactionObjectText.text = "Tiroir";
 
@@ -165,7 +169,7 @@ public class PlayerInteract : MonoBehaviour {
 
                     interactInputImage.gameObject.SetActive(true);
                 }
-                if (hitInfo.transform.gameObject.CompareTag("document"))
+                else if (hitInfo.transform.gameObject.CompareTag("document"))
                 {
                     interactionObjectText.gameObject.SetActive(true);
                     interactionObjectText.text = hitInfo.transform.gameObject.GetComponent<DocumentOpener>().displayName;
@@ -175,17 +179,17 @@ public class PlayerInteract : MonoBehaviour {
 
                     interactInputImage.gameObject.SetActive(true);
                 }
-				if (hitInfo.transform.gameObject.CompareTag("door"))
+				else if (hitInfo.transform.gameObject.CompareTag("door"))
 				{
 					interactionObjectText.gameObject.SetActive(true);
-					interactionObjectText.text = "Porte";
+					interactionObjectText.text = "Office door";
 
 					interactionVerbText.gameObject.SetActive(true);
 					interactionVerbText.text = doorVerb;
 
 					interactInputImage.gameObject.SetActive(true);
 				}
-                if (hitInfo.transform.gameObject.CompareTag("doorButton"))
+                else if (hitInfo.transform.gameObject.CompareTag("doorButton"))
                 {
                     interactionObjectText.gameObject.SetActive(true);
                     interactionObjectText.text = hitInfo.transform.gameObject.GetComponent<DoorButton>().displayName;
@@ -195,6 +199,16 @@ public class PlayerInteract : MonoBehaviour {
 
                     interactInputImage.gameObject.SetActive(true);
                 }
+                //else if (hitInfo.transform.gameObject.CompareTag("slider"))
+                //{
+                //    interactionObjectText.gameObject.SetActive(true);
+                //    interactionObjectText.text = "";
+
+                //    interactionVerbText.gameObject.SetActive(true);
+                //    interactionVerbText.text = doorButtonVerb;
+
+                //    interactInputImage.gameObject.SetActive(true);
+                //}
             }
             else
             {
