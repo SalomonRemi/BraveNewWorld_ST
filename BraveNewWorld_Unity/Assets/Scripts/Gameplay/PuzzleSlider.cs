@@ -8,18 +8,25 @@ public class PuzzleSlider : MonoBehaviour {
     public int sliderValue;
     public bool isActivated;
 
-    public GameObject nodeLight;
+    public bool isValidate;
 
     [HideInInspector] public int realSliderValue;
 
     private MeshRenderer mr;
+
+    [HideInInspector] public Color currentMatColor;
+
     private Animator anim;
 
 	void Start ()
     {
         realSliderValue = 1;
-        mr = nodeLight.GetComponent<MeshRenderer>();
+        mr = GetComponent<MeshRenderer>();
         anim = GetComponent<Animator>();
+
+        if (!isValidate) mr.material.color = Color.white;
+
+        currentMatColor = mr.material.color;
 	}
 
     public void SliderInteraction()
@@ -32,14 +39,21 @@ public class PuzzleSlider : MonoBehaviour {
         if(isActivated)
         {
             mr.material.color = Color.green;
+            currentMatColor = mr.material.color;
             anim.SetBool("Activated", true);
             realSliderValue = sliderValue;
         }
         else
         {
-            mr.material.color = Color.red;
+            mr.material.color = Color.white;
+            currentMatColor = mr.material.color;
             anim.SetBool("Activated", false);
             realSliderValue = 1;
         }
+    }
+
+    public void ValidateNumber()
+    {
+        ElectricPuzzle.instance.Validate();
     }
 }

@@ -85,7 +85,8 @@ public class PlayerInteract : MonoBehaviour {
                     }
                     if (hit.transform.gameObject.CompareTag("slider"))
                     {
-                        hit.transform.gameObject.GetComponent<PuzzleSlider>().SliderInteraction();
+                        if (hit.transform.gameObject.GetComponent<PuzzleSlider>().isValidate) hit.transform.gameObject.GetComponent<PuzzleSlider>().ValidateNumber();
+                        else hit.transform.gameObject.GetComponent<PuzzleSlider>().SliderInteraction();
                     }
                     if (hit.transform.gameObject.CompareTag("powerButton"))
                     {
