@@ -33,12 +33,12 @@ public class Keypad : MonoBehaviour {
 
 			if (btn.GetComponent<keyBtn> ().clicked)
 			{
-				newScale.y = 1.3f;
+				//newScale.y = 1.3f;
 				btn.GetComponent<keyBtn>().support.GetComponent<MeshRenderer> ().material.color = Color.green;
 			} 
 			else
 			{
-				newScale.y = 3.3f;
+				//newScale.y = 3.3f;
 				btn.GetComponent<keyBtn>().support.GetComponent<MeshRenderer> ().material.color = Color.black;
 			}
 

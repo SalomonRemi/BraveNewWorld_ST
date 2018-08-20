@@ -26,6 +26,7 @@ public class PlayerInteract : MonoBehaviour {
     public string drawerVerb;
 	public string doorVerb;
     public string doorButtonVerb;
+    public string powerButtonVerb;
 
 
     private Vector3 prevSitpos;
@@ -82,6 +83,14 @@ public class PlayerInteract : MonoBehaviour {
 						hit.transform.gameObject.GetComponentInParent<LockerNum>().DecreaseNumber();
                         AudioManager.instance.PlaySound("lockerButton");
                     }
+                    if (hit.transform.gameObject.CompareTag("slider"))
+                    {
+                        hit.transform.gameObject.GetComponent<PuzzleSlider>().SliderInteraction();
+                    }
+                    if (hit.transform.gameObject.CompareTag("powerButton"))
+                    {
+                        hit.transform.gameObject.GetComponent<ElectricPowerButton>().EnableObjects();
+                    }
                 }
 			} 
 		}
@@ -111,6 +120,7 @@ public class PlayerInteract : MonoBehaviour {
                 {
                     hit.transform.gameObject.GetComponent<DoorButton>().OpenDoor();
                 }
+
             }
         }
 
@@ -154,7 +164,7 @@ public class PlayerInteract : MonoBehaviour {
                     interactInputImage.gameObject.SetActive(true);
 
                 }
-                if (hitInfo.transform.gameObject.CompareTag("drawer"))
+                else if (hitInfo.transform.gameObject.CompareTag("drawer"))
                 {
                     interactionObjectText.text = "Tiroir";
 
@@ -165,7 +175,7 @@ public class PlayerInteract : MonoBehaviour {
 
                     interactInputImage.gameObject.SetActive(true);
                 }
-                if (hitInfo.transform.gameObject.CompareTag("document"))
+                else if (hitInfo.transform.gameObject.CompareTag("document"))
                 {
                     interactionObjectText.gameObject.SetActive(true);
                     interactionObjectText.text = hitInfo.transform.gameObject.GetComponent<DocumentOpener>().displayName;
@@ -175,23 +185,33 @@ public class PlayerInteract : MonoBehaviour {
 
                     interactInputImage.gameObject.SetActive(true);
                 }
-				if (hitInfo.transform.gameObject.CompareTag("door"))
+				else if (hitInfo.transform.gameObject.CompareTag("door"))
 				{
 					interactionObjectText.gameObject.SetActive(true);
-					interactionObjectText.text = "Porte";
+					interactionObjectText.text = "Office door";
 
 					interactionVerbText.gameObject.SetActive(true);
 					interactionVerbText.text = doorVerb;
 
 					interactInputImage.gameObject.SetActive(true);
 				}
-                if (hitInfo.transform.gameObject.CompareTag("doorButton"))
+                else if (hitInfo.transform.gameObject.CompareTag("doorButton"))
                 {
                     interactionObjectText.gameObject.SetActive(true);
                     interactionObjectText.text = hitInfo.transform.gameObject.GetComponent<DoorButton>().displayName;
 
                     interactionVerbText.gameObject.SetActive(true);
                     interactionVerbText.text = doorButtonVerb;
+
+                    interactInputImage.gameObject.SetActive(true);
+                }
+                else if (hitInfo.transform.gameObject.CompareTag("powerButton"))
+                {
+                    interactionObjectText.gameObject.SetActive(true);
+                    interactionObjectText.text = "Electric power";
+
+                    interactionVerbText.gameObject.SetActive(true);
+                    interactionVerbText.text = powerButtonVerb;
 
                     interactInputImage.gameObject.SetActive(true);
                 }

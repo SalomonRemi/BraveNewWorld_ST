@@ -19,6 +19,8 @@ TagManager:
   - lockDown
   - baby
   - babyKiller
+  - slider
+  - powerButton
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,8 @@ public class PlayMusicTrigger : MonoBehaviour {
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            MissionManager.instance.isInVents = true;
+
             if(music == "escapeSing")
             {
                 if (MissionManager.instance.isInLastPuzzle)
