@@ -64,6 +64,8 @@ public class Locker : MonoBehaviour {
         objectAnim.SetBool(objectAnimClipName, true);
         AudioManager.instance.PlaySound(soundPlay);
 
+        Debug.Log("wow");
+
         if (isOscarLocker && !MissionManager.instance.isInLastPuzzle)
         {
             AudioManager.instance.StopMusic();
