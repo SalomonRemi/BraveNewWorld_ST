@@ -16,7 +16,6 @@ public class MissionManager : MonoBehaviour {
 	public float fadeTime;
 
     public Animator elevatorDoorAnim;
-    public Animator hallDoorAnim;
     public Animator doorRoomAnim;
 	public Animator blockView;
     public GameObject tutoMoveObject;
@@ -149,7 +148,7 @@ public class MissionManager : MonoBehaviour {
             AudioManager.instance.StopMusic();
 
             //StartCoroutine(startMission());
-            StartCoroutine(mission4());
+            StartCoroutine(startMission());
 
             player.transform.position = debugTransform.position;
         }
@@ -896,7 +895,7 @@ public class MissionManager : MonoBehaviour {
 		for (int i = 0; i < puzzleDoorNumber.Count; i++)
 		{
 			int door = puzzleDoorNumber[i] - 1;
-			keypad.keyButtons [door].GetComponent<keyBtn> ().doorAnimator.SetBool ("Open", doorState);
+            keypad.keyButtons [door].GetComponent<keyBtn> ().doorAnimator.SetBool ("Open", doorState);
 		}
 	}
 
