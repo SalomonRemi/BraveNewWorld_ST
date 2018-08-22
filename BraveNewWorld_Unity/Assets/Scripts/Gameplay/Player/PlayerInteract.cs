@@ -96,13 +96,22 @@ public class PlayerInteract : MonoBehaviour {
                     {
                         if(!hit.transform.gameObject.GetComponent<Radio>().isActivated)
                         {
-                            Debug.Log("start");
                             hit.transform.gameObject.GetComponent<Radio>().StartRadio();
                         }
                         else
                         {
                             hit.transform.gameObject.GetComponent<Radio>().CutRadio();
-                            Debug.Log("not");
+                        }
+                    }
+                    else if (hit.transform.gameObject.CompareTag("megaphoneButton"))
+                    {
+                        if (!hit.transform.gameObject.GetComponent<Megaphone>().isActivated)
+                        {
+                            hit.transform.gameObject.GetComponent<Megaphone>().StartMegaphone();
+                        }
+                        else
+                        {
+                            hit.transform.gameObject.GetComponent<Megaphone>().CutMegaphone();
                         }
                     }
                 }

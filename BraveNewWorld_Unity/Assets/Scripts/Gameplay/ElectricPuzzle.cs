@@ -15,6 +15,7 @@ public class ElectricPuzzle : MonoBehaviour {
     [Header("Megaphone")]
     public int megaphoneCode;
     public GameObject megaphoneNumberDisplay;
+    public Megaphone megaphone;
 
     [Header("Radio")]
     public int radioCode;
@@ -79,6 +80,7 @@ public class ElectricPuzzle : MonoBehaviour {
             StartCoroutine(Flash(Color.green));
             megaphoneNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
             AudioManager.instance.PlaySound("digiOkSound");
+            megaphone.TurnOnMegaphone();
         }
         else if (multiplicationResult == radioCode)
         {

@@ -35,6 +35,8 @@ public class Radio : MonoBehaviour {
     public void StartRadio() //CALL ON BUTTON PRESS ON
     {
         AudioManager.instance.PlaySound("lockerButton");
+        AudioManager.instance.PlaySound(startRadioName);
+
         nodeMr.material.color = Color.green;
         isActivated = true;
 
@@ -43,12 +45,15 @@ public class Radio : MonoBehaviour {
 
     public void CutRadio() //CALL ON BUTTON PRESS OFF
     {
+        StopAllCoroutines();
+
         nodeMr.material.color = Color.red;
         isActivated = false;
+        AudioManager.instance.PlaySound(cutRadioName);
+
         AudioManager.instance.PlaySound("lockerButton");
         AudioManager.instance.StopMusic();
         FindObjectOfType<DialogSystem>().EndDialogue();
-        StopAllCoroutines();
     }
 
     IEnumerator RadioMessage()
@@ -60,6 +65,8 @@ public class Radio : MonoBehaviour {
         //SON DIALOGUE
 
         yield return new WaitForSeconds(10f);
+
+        yield return null;
 
         StartCoroutine(RadioMessage());
     }
