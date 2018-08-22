@@ -31,8 +31,6 @@ public class PuzzleSlider : MonoBehaviour {
 
     public void SliderInteraction()
     {
-        //AudioManager.instance.PlaySound("lockerButton");
-
         if (isActivated) isActivated = false;
         else isActivated = true;
 
@@ -42,6 +40,7 @@ public class PuzzleSlider : MonoBehaviour {
             currentMatColor = mr.material.color;
             anim.SetBool("Activated", true);
             realSliderValue = sliderValue;
+            AudioManager.instance.PlaySound("openDesks");
         }
         else
         {
@@ -49,11 +48,13 @@ public class PuzzleSlider : MonoBehaviour {
             currentMatColor = mr.material.color;
             anim.SetBool("Activated", false);
             realSliderValue = 1;
+            AudioManager.instance.PlaySound("closeDesks");
         }
     }
 
     public void ValidateNumber()
     {
         ElectricPuzzle.instance.Validate();
+        AudioManager.instance.PlaySound("lockerButton");
     }
 }

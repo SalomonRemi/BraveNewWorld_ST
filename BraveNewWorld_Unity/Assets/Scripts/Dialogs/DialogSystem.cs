@@ -44,7 +44,7 @@ public class DialogSystem : MonoBehaviour {
 		StartCoroutine (dialogueType (sentence)); // DEMMARE ANIM DE TYPING
 	}
 
-	void EndDialogue()
+	public void EndDialogue()
     {
 		dialogueText.text = "";
         GameManager.instance.canLOS = true; // ACTIVE DIALOGUE DYNAMIQUE

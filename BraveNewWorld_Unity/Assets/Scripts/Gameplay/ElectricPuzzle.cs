@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DigitalRuby.SoundManagerNamespace;
 
 public class ElectricPuzzle : MonoBehaviour {
 
@@ -77,6 +78,7 @@ public class ElectricPuzzle : MonoBehaviour {
             Debug.Log("megaphone");
             StartCoroutine(Flash(Color.green));
             megaphoneNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
+            AudioManager.instance.PlaySound("digiOkSound");
         }
         else if (multiplicationResult == radioCode)
         {
@@ -84,23 +86,27 @@ public class ElectricPuzzle : MonoBehaviour {
             StartCoroutine(Flash(Color.green));
             radioNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
             radio.TurnOnRadio();
+            AudioManager.instance.PlaySound("digiOkSound");
         }
         else if (multiplicationResult == alarmCode)
         {
             Debug.Log("alarm");
             StartCoroutine(Flash(Color.green));
             alarmNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
+            AudioManager.instance.PlaySound("digiOkSound");
         }
         else if (multiplicationResult == digicodeCode)
         {
             Debug.Log("digicode");
             StartCoroutine(Flash(Color.green));
             digicodeNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
+            AudioManager.instance.PlaySound("digiOkSound");
         }
         else
         {
             Debug.Log("false");
             StartCoroutine(Flash(Color.red));
+            AudioManager.instance.PlaySound("digiError");
         }
     }
 
