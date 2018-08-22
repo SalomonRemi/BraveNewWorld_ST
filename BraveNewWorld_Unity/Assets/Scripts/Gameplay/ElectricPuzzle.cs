@@ -25,6 +25,7 @@ public class ElectricPuzzle : MonoBehaviour {
     [Header("Digicode")]
     public int digicodeCode;
     public GameObject digicodeNumberDisplay;
+    public DigicodePuzzle digicode;
 
     [Header("Alarm")]
     public int alarmCode;
@@ -103,6 +104,7 @@ public class ElectricPuzzle : MonoBehaviour {
             StartCoroutine(Flash(Color.green));
             digicodeNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
             AudioManager.instance.PlaySound("digiOkSound");
+            digicode.TurnOnDigi();
         }
         else
         {
