@@ -21,6 +21,8 @@ TagManager:
   - babyKiller
   - slider
   - powerButton
+  - radioButton
+  - megaphoneButton
   layers:
   - Default
   - TransparentFX

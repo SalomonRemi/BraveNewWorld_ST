@@ -92,6 +92,19 @@ public class PlayerInteract : MonoBehaviour {
                     {
                         hit.transform.gameObject.GetComponent<ElectricPowerButton>().EnableObjects();
                     }
+                    if (hit.transform.gameObject.CompareTag("radioButton"))
+                    {
+                        if(!hit.transform.gameObject.GetComponent<Radio>().isActivated)
+                        {
+                            Debug.Log("start");
+                            hit.transform.gameObject.GetComponent<Radio>().StartRadio();
+                        }
+                        else
+                        {
+                            hit.transform.gameObject.GetComponent<Radio>().CutRadio();
+                            Debug.Log("not");
+                        }
+                    }
                 }
 			} 
 		}
@@ -210,6 +223,16 @@ public class PlayerInteract : MonoBehaviour {
                 {
                     interactionObjectText.gameObject.SetActive(true);
                     interactionObjectText.text = "Electric power";
+
+                    interactionVerbText.gameObject.SetActive(true);
+                    interactionVerbText.text = powerButtonVerb;
+
+                    interactInputImage.gameObject.SetActive(true);
+                }
+                else if (hitInfo.transform.gameObject.CompareTag("radioButton"))
+                {
+                    interactionObjectText.gameObject.SetActive(true);
+                    interactionObjectText.text = "Radio power";
 
                     interactionVerbText.gameObject.SetActive(true);
                     interactionVerbText.text = powerButtonVerb;

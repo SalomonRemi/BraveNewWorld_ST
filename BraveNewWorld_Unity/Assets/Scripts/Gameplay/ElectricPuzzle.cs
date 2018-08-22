@@ -8,20 +8,26 @@ public class ElectricPuzzle : MonoBehaviour {
     public static ElectricPuzzle instance = null;
 
     public List<PuzzleSlider> sliderList;
-
-    public int megaphoneCode;
-    public int radioCode;
-    public int alarmCode;
-    public int digicodeCode;
-
     public TextMeshPro text;
-
     public GameObject validateButton;
 
+    [Header("Megaphone")]
+    public int megaphoneCode;
     public GameObject megaphoneNumberDisplay;
+
+    [Header("Radio")]
+    public int radioCode;
     public GameObject radioNumberDisplay;
-    public GameObject alarmNumberDisplay;
+    public Radio radio;
+
+    [Header("Digicode")]
+    public int digicodeCode;
     public GameObject digicodeNumberDisplay;
+
+    [Header("Alarm")]
+    public int alarmCode;
+    public GameObject alarmNumberDisplay;
+    
 
     private List<int> sliderOn;
 
@@ -77,6 +83,7 @@ public class ElectricPuzzle : MonoBehaviour {
             Debug.Log("radio");
             StartCoroutine(Flash(Color.green));
             radioNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
+            radio.TurnOnRadio();
         }
         else if (multiplicationResult == alarmCode)
         {
