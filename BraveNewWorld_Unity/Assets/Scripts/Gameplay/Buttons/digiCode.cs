@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class digiCode : MonoBehaviour {
 
+    public bool isLastDigicode;
+
     public GameObject[] keyButtons;
     public int enabledAmmount;
     public float keycode;
@@ -170,6 +172,19 @@ public class digiCode : MonoBehaviour {
 			//AudioManager.instance.PlaySound("digiOkSound");
 			return true;
 		}
+        else if (isLastDigicode && keycode == 1111)
+        {
+            Debug.Log("trop cool frère");
+
+            GameManager.instance.flashKeypad = true;
+
+            foreach (GameObject btn in keyButtons)
+            {
+                btn.GetComponent<Renderer>().material.color = Color.green;
+            }
+            AudioManager.instance.PlaySound("digiOkSound");
+            return true;
+        }
         else 
 		{
             AudioManager.instance.PlaySound("digiError");
