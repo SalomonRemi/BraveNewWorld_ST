@@ -30,6 +30,7 @@ public class ElectricPuzzle : MonoBehaviour {
     [Header("Alarm")]
     public int alarmCode;
     public GameObject alarmNumberDisplay;
+    public Alarm alarm;
     
 
     private List<int> sliderOn;
@@ -97,6 +98,7 @@ public class ElectricPuzzle : MonoBehaviour {
             StartCoroutine(Flash(Color.green));
             alarmNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
             AudioManager.instance.PlaySound("digiOkSound");
+            alarm.TurnOnAlarm();
         }
         else if (multiplicationResult == digicodeCode)
         {

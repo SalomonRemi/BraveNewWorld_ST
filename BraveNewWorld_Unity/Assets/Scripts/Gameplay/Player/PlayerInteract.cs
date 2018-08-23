@@ -114,6 +114,10 @@ public class PlayerInteract : MonoBehaviour {
                             hit.transform.gameObject.GetComponent<Megaphone>().CutMegaphone();
                         }
                     }
+                    else if (hit.transform.gameObject.CompareTag("alarmButton"))
+                    {
+                        hit.transform.gameObject.GetComponent<Alarm>().DoAlarm();
+                    }
                 }
 			} 
 		}

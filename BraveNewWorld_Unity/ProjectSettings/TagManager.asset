@@ -23,6 +23,7 @@ TagManager:
   - powerButton
   - radioButton
   - megaphoneButton
+  - alarmButton
   layers:
   - Default
   - TransparentFX
