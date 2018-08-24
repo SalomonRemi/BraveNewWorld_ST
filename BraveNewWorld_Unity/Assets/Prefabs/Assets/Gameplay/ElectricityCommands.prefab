@@ -1771,8 +1771,10 @@ MonoBehaviour:
   radio: {fileID: 0}
   digicodeCode: 84
   digicodeNumberDisplay: {fileID: 1182525037451710}
+  digicode: {fileID: 0}
   alarmCode: 144
   alarmNumberDisplay: {fileID: 1560844231571530}
+  alarm: {fileID: 0}
 --- !u!114 &114680807436195756
 MonoBehaviour:
   m_ObjectHideFlags: 1
