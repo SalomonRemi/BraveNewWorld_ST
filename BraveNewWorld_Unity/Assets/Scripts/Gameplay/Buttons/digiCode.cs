@@ -30,14 +30,17 @@ public class digiCode : MonoBehaviour {
 
     void Update()
     {
-        MissionManager.instance.digiTxt.text = "" + keycode;
-
-        if (keycode == 0)
+        if (!isLastDigicode)
         {
-            enabledAmmount = 0;
-            MissionManager.instance.digiTxt.text = "";
+            MissionManager.instance.digiTxt.text = "" + keycode;
+
+            if (keycode == 0)
+            {
+                enabledAmmount = 0;
+                MissionManager.instance.digiTxt.text = "";
+            }
+            else MissionManager.instance.digiTxt.text = "" + keycode;
         }
-        else MissionManager.instance.digiTxt.text = "" + keycode;
 
         foreach (GameObject btn in keyButtons)
         {

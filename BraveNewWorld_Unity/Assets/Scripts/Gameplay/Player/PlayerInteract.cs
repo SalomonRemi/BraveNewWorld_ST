@@ -252,6 +252,16 @@ public class PlayerInteract : MonoBehaviour {
 
                     interactInputImage.gameObject.SetActive(true);
                 }
+                else if (hitInfo.transform.gameObject.CompareTag("megaphoneButton"))
+                {
+                    interactionObjectText.gameObject.SetActive(true);
+                    interactionObjectText.text = "Megaphone power";
+
+                    interactionVerbText.gameObject.SetActive(true);
+                    interactionVerbText.text = powerButtonVerb;
+
+                    interactInputImage.gameObject.SetActive(true);
+                }
             }
             else
             {

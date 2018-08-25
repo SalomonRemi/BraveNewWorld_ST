@@ -399,6 +399,7 @@ MonoBehaviour:
   cutMegaphoneName: accident
   node: {fileID: 1858089791972746}
   megaphoneAnim: {fileID: 95223767943798688}
+  cooldownTime: 1
   isActivated: 0
 --- !u!114 &114880893449142066
 MonoBehaviour:

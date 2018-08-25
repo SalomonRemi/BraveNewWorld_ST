@@ -399,6 +399,7 @@ MonoBehaviour:
   cutRadioName: accident
   node: {fileID: 1877540451226592}
   radioAnim: {fileID: 95274703685556968}
+  cooldownTime: 1
   isActivated: 0
 --- !u!114 &114869213769187216
 MonoBehaviour:

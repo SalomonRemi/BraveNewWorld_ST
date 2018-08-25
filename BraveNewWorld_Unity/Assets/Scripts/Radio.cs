@@ -13,7 +13,10 @@ public class Radio : MonoBehaviour {
 
     public Animator radioAnim;
 
+    public float cooldownTime;
+
     private MeshRenderer nodeMr;
+    private Collider col;
 
     [HideInInspector] public bool isActivated;
 
@@ -21,6 +24,7 @@ public class Radio : MonoBehaviour {
     private void Start()
     {
         nodeMr = node.GetComponent<MeshRenderer>();
+        col = GetComponent<Collider>();
     }
 
 
@@ -29,6 +33,7 @@ public class Radio : MonoBehaviour {
         nodeMr.material.color = Color.red;
         isActivated = false;
         radioAnim.SetBool("turnOn", true);
+        col.enabled = true;
     }
 
 
@@ -69,5 +74,15 @@ public class Radio : MonoBehaviour {
         yield return null;
 
         StartCoroutine(RadioMessage());
+    }
+
+    IEnumerator ClickCooldown()
+    {
+        col.enabled = false;
+
+        yield return new WaitForSeconds(cooldownTime);
+
+        col.enabled = true;
+        yield return null;
     }
 }
