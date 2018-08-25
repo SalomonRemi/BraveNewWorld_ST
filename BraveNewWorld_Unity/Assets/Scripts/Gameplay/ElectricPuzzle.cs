@@ -12,6 +12,10 @@ public class ElectricPuzzle : MonoBehaviour {
     public TextMeshPro text;
     public GameObject validateButton;
 
+    public Material greenMat;
+    public Material redMat;
+    public Material originalMat;
+
     [Header("Megaphone")]
     public int megaphoneCode;
     public GameObject megaphoneNumberDisplay;
@@ -79,7 +83,7 @@ public class ElectricPuzzle : MonoBehaviour {
         if(multiplicationResult == megaphoneCode)
         {
             Debug.Log("megaphone");
-            StartCoroutine(Flash(Color.green));
+            StartCoroutine(Flash(greenMat));
             megaphoneNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
             AudioManager.instance.PlaySound("digiOkSound");
             megaphone.TurnOnMegaphone();
@@ -87,7 +91,7 @@ public class ElectricPuzzle : MonoBehaviour {
         else if (multiplicationResult == radioCode)
         {
             Debug.Log("radio");
-            StartCoroutine(Flash(Color.green));
+            StartCoroutine(Flash(greenMat));
             radioNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
             radio.TurnOnRadio();
             AudioManager.instance.PlaySound("digiOkSound");
@@ -95,7 +99,7 @@ public class ElectricPuzzle : MonoBehaviour {
         else if (multiplicationResult == alarmCode)
         {
             Debug.Log("alarm");
-            StartCoroutine(Flash(Color.green));
+            StartCoroutine(Flash(greenMat));
             alarmNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
             AudioManager.instance.PlaySound("digiOkSound");
             alarm.TurnOnAlarm();
@@ -103,7 +107,7 @@ public class ElectricPuzzle : MonoBehaviour {
         else if (multiplicationResult == digicodeCode)
         {
             Debug.Log("digicode");
-            StartCoroutine(Flash(Color.green));
+            StartCoroutine(Flash(greenMat));
             digicodeNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
             AudioManager.instance.PlaySound("digiOkSound");
             digicode.TurnOnDigi();
@@ -111,61 +115,61 @@ public class ElectricPuzzle : MonoBehaviour {
         else
         {
             Debug.Log("false");
-            StartCoroutine(Flash(Color.red));
+            StartCoroutine(Flash(redMat));
             AudioManager.instance.PlaySound("digiError");
         }
     }
 
-    IEnumerator Flash (Color flashColor)
+    IEnumerator Flash (Material flashColor)
     {
         foreach (PuzzleSlider slider in sliderList)
         {
-            slider.gameObject.GetComponent<MeshRenderer>().material.color = flashColor;
+            slider.gameObject.GetComponent<MeshRenderer>().material = flashColor;
         }
-        validateButton.GetComponent<MeshRenderer>().material.color = flashColor;
+        validateButton.GetComponent<MeshRenderer>().material = flashColor;
         yield return new WaitForSeconds(0.2f);
 
         foreach (PuzzleSlider slider in sliderList)
         {
-            slider.gameObject.GetComponent<MeshRenderer>().material.color = Color.grey;
+            slider.gameObject.GetComponent<MeshRenderer>().material = originalMat;
         }
-        validateButton.GetComponent<MeshRenderer>().material.color = Color.grey;
+        validateButton.GetComponent<MeshRenderer>().material = originalMat;
         yield return new WaitForSeconds(0.2f);
 
         foreach (PuzzleSlider slider in sliderList)
         {
-            slider.gameObject.GetComponent<MeshRenderer>().material.color = flashColor;
+            slider.gameObject.GetComponent<MeshRenderer>().material = flashColor;
         }
-        validateButton.GetComponent<MeshRenderer>().material.color = flashColor;
+        validateButton.GetComponent<MeshRenderer>().material = flashColor;
         yield return new WaitForSeconds(0.2f);
 
         foreach (PuzzleSlider slider in sliderList)
         {
-            slider.gameObject.GetComponent<MeshRenderer>().material.color = Color.grey;
+            slider.gameObject.GetComponent<MeshRenderer>().material = originalMat;
         }
-        validateButton.GetComponent<MeshRenderer>().material.color = Color.grey;
+        validateButton.GetComponent<MeshRenderer>().material = originalMat;
         yield return new WaitForSeconds(0.2f);
 
         foreach (PuzzleSlider slider in sliderList)
         {
-            slider.gameObject.GetComponent<MeshRenderer>().material.color = flashColor;
+            slider.gameObject.GetComponent<MeshRenderer>().material = flashColor;
         }
-        validateButton.GetComponent<MeshRenderer>().material.color = flashColor;
+        validateButton.GetComponent<MeshRenderer>().material = flashColor;
         yield return new WaitForSeconds(0.2f);
 
         foreach (PuzzleSlider slider in sliderList)
         {
-            slider.gameObject.GetComponent<MeshRenderer>().material.color = Color.grey;
+            slider.gameObject.GetComponent<MeshRenderer>().material = originalMat;
         }
-        validateButton.GetComponent<MeshRenderer>().material.color = Color.grey;
+        validateButton.GetComponent<MeshRenderer>().material = originalMat;
         yield return new WaitForSeconds(0.2f);
 
 
         foreach (PuzzleSlider slider in sliderList)
         {
-            slider.gameObject.GetComponent<MeshRenderer>().material.color = slider.currentMatColor;
+            slider.gameObject.GetComponent<MeshRenderer>().material = slider.currentMatColor;
         }
-        validateButton.GetComponent<MeshRenderer>().material.color = validateButton.GetComponent<PuzzleSlider>().currentMatColor;
+        validateButton.GetComponent<MeshRenderer>().material = validateButton.GetComponent<PuzzleSlider>().currentMatColor;
 
         yield return null;
     }

@@ -64,7 +64,6 @@ public class MissionManager : MonoBehaviour {
     [HideInInspector] public bool isInVents;
 
     public TextMeshPro recapText;
-	public TextMeshPro oscarOrderText;
     public flipSwitch flipper;
     public TextMeshPro digiTxt;
 
@@ -74,6 +73,7 @@ public class MissionManager : MonoBehaviour {
 
 	public Transform debugTransform;
 	public GameObject agent;
+    public Material digicodeMat;
 
 	[HideInInspector] public bool digiFinishPuzzle = false;
 	[HideInInspector] public bool inLastPuzzle;
@@ -97,7 +97,6 @@ public class MissionManager : MonoBehaviour {
 
 
     List<int> doorNums = new List<int>();
-
 
     void Awake()
 	{
@@ -147,8 +146,8 @@ public class MissionManager : MonoBehaviour {
 
             AudioManager.instance.StopMusic();
 
-            //StartCoroutine(startMission());
             StartCoroutine(startMission());
+            //StartCoroutine(mission7());
 
             player.transform.position = debugTransform.position;
         }
@@ -174,7 +173,6 @@ public class MissionManager : MonoBehaviour {
 
 
 
-#region Introduction
     public IEnumerator startIntroduction()
     {
         yield return new WaitForSeconds(fadeTime);
@@ -317,7 +315,6 @@ public class MissionManager : MonoBehaviour {
 
         StartCoroutine(startMission());
     }
-#endregion 
 
 
     public IEnumerator startMission()
@@ -719,7 +716,7 @@ public class MissionManager : MonoBehaviour {
         AudioManager.instance.StopMusic();
         AudioManager.instance.PlayMusic("puzzle7_1");
         
-        StartCoroutine(DisplayOrder(12f));
+        StartCoroutine(DisplayOrder(16f));
         orderText = "Trouvez qui se trouve dans la salle tri à l'aide du relevé d'incidents puis entrez son identifiant sur le digicode.";
 
         yield return new WaitForSeconds(2f);
@@ -856,7 +853,7 @@ public class MissionManager : MonoBehaviour {
 
         foreach (GameObject btn in digicode.keyButtons)
 		{
-			btn.GetComponent<Renderer>().material.color = Color.grey;
+			btn.GetComponent<Renderer>().material = digicodeMat;
 		}
 
 		digicode.keycode = 0;

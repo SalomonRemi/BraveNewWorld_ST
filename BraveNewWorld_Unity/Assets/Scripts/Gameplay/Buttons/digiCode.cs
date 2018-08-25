@@ -11,6 +11,10 @@ public class digiCode : MonoBehaviour {
     public int enabledAmmount;
     public float keycode;
 
+    public Material redMat;
+    public Material greenMat;
+    public Material originMat;
+
     bool code1Used = false;
 
     public ExePuzzle ep;
@@ -41,22 +45,6 @@ public class digiCode : MonoBehaviour {
             }
             else MissionManager.instance.digiTxt.text = "" + keycode;
         }
-
-        foreach (GameObject btn in keyButtons)
-        {
-            if (btn.GetComponent<digicodeBtn>().clicked)
-            {
-                btn.GetComponent<Renderer>().material.color = Color.green;
-            }
-            if (GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerInteract>().isSitting)
-            {
-                btn.GetComponent<highlightSelf>().enabled = true;
-            }
-            else
-            {
-                btn.GetComponent<highlightSelf>().enabled = false;
-            }
-        }
     }
 
     public void validateInput()
@@ -66,57 +54,57 @@ public class digiCode : MonoBehaviour {
             if (keycode == 95 && ep.stepID == 1)
             {
                 ep.nextStep = true;
-                StartCoroutine(lightFlashKeys(Color.green, true));
+                StartCoroutine(lightFlashKeys(greenMat, true));
             }
             else if (keycode == 18 && ep.stepID == 2)
             {
                 ep.nextStep = true;
-                StartCoroutine(lightFlashKeys(Color.green, true));
+                StartCoroutine(lightFlashKeys(greenMat, true));
             }
             else if (keycode == 19 && ep.stepID == 3)
             {
                 ep.nextStep = true;
-                StartCoroutine(lightFlashKeys(Color.green, true));
+                StartCoroutine(lightFlashKeys(greenMat, true));
             }
             else if (keycode == 260 && ep.stepID == 4)
             {
                 ep.nextStep = true;
-                StartCoroutine(lightFlashKeys(Color.green, true));
+                StartCoroutine(lightFlashKeys(greenMat, true));
             }
             else if (keycode == 270 && ep.stepID == 5)
             {
                 ep.nextStep = true;
-                StartCoroutine(lightFlashKeys(Color.green, true));
+                StartCoroutine(lightFlashKeys(greenMat, true));
             }
             else if (keycode == 280 && ep.stepID == 6)
             {
                 ep.nextStep = true;
-                StartCoroutine(lightFlashKeys(Color.green, true));
+                StartCoroutine(lightFlashKeys(greenMat, true));
             }
             else if (keycode == 450 && ep.stepID == 7)
             {
                 ep.nextStep = true;
-                StartCoroutine(lightFlashKeys(Color.green, true));
+                StartCoroutine(lightFlashKeys(greenMat, true));
             }
             else if (keycode == 860 && ep.stepID == 8)
             {
                 ep.nextStep = true;
-                StartCoroutine(lightFlashKeys(Color.green, true));
+                StartCoroutine(lightFlashKeys(greenMat, true));
             }
             else if (keycode == 870 && ep.stepID == 9)
             {
                 ep.nextStep = true;
-                StartCoroutine(lightFlashKeys(Color.green, true));
+                StartCoroutine(lightFlashKeys(greenMat, true));
             }
             else if (keycode == 850 && ep.stepID == 10)
             {
                 ep.nextStep = true;
-                StartCoroutine(lightFlashKeys(Color.green, true));
+                StartCoroutine(lightFlashKeys(greenMat, true));
             }
             else if (keycode == 461 && ep.stepID == 11)
             {
                 ep.nextStep = true;
-                StartCoroutine(lightFlashKeys(Color.green, true));
+                StartCoroutine(lightFlashKeys(greenMat, true));
             }
 
             else
@@ -139,7 +127,7 @@ public class digiCode : MonoBehaviour {
                 {
                     btn.GetComponent<digicodeBtn>().clicked = false;
                 }
-                StartCoroutine(flashKeys(Color.red, true));
+                StartCoroutine(flashKeys(redMat, true));
             }
         }
     }
@@ -150,13 +138,11 @@ public class digiCode : MonoBehaviour {
         {
             MissionManager.instance.digiFinishPuzzle = true;
 
-            //AudioManager.instance.PlaySound("digiOkSound");
-
             MissionManager.instance.inLastPuzzle = false;
 
 			foreach (GameObject btn in keyButtons)
 			{
-				btn.GetComponent<Renderer>().material.color = Color.green;
+				btn.GetComponent<Renderer>().material = greenMat;
 			}
 
             return true;
@@ -166,24 +152,20 @@ public class digiCode : MonoBehaviour {
 			MissionManager.instance.digiFinishPuzzle = true;
 			MissionManager.instance.searchJack = false;
 
-			GameManager.instance.flashKeypad = true;
-
 			foreach (GameObject btn in keyButtons)
 			{
-				btn.GetComponent<Renderer>().material.color = Color.green;
+                btn.GetComponent<Renderer>().material = greenMat;
 			}
-			//AudioManager.instance.PlaySound("digiOkSound");
+
 			return true;
 		}
-        else if (isLastDigicode && keycode == 1111)
+        else if (isLastDigicode && keycode == 6444)
         {
-            Debug.Log("trop cool frère");
-
             GameManager.instance.flashKeypad = true;
 
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = Color.green;
+                btn.GetComponent<Renderer>().material = greenMat;
             }
             AudioManager.instance.PlaySound("digiOkSound");
             return true;
@@ -202,74 +184,74 @@ public class digiCode : MonoBehaviour {
             if (btn.GetComponent<digicodeBtn>().clicked)
             {
                 btn.GetComponent<digicodeBtn>().clicked = false;
-                btn.GetComponent<Renderer>().material.color = Color.grey;
+                btn.GetComponent<Renderer>().material = originMat;
             }
         }
         enabledAmmount = 0;
         keycode = 0;
     }
 
-    public IEnumerator flashKeys(Color col, bool flash)
+    public IEnumerator flashKeys(Material col, bool flash)
     {
         resetKeypad();
         if (flash)
         {
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = col;
+                btn.GetComponent<Renderer>().material = col;
             }
             yield return new WaitForSeconds(0.2f);
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = Color.grey;
+                btn.GetComponent<Renderer>().material = originMat;
             }
             yield return new WaitForSeconds(0.2f);
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = col;
+                btn.GetComponent<Renderer>().material = col;
             }
             yield return new WaitForSeconds(0.2f);
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = Color.grey;
+                btn.GetComponent<Renderer>().material = originMat;
             }
             yield return new WaitForSeconds(0.2f);
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = col;
+                btn.GetComponent<Renderer>().material = col;
             }
             yield return new WaitForSeconds(0.2f);
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = Color.grey;
+                btn.GetComponent<Renderer>().material = originMat;
             }
         }
         foreach (GameObject btn in keyButtons)
         {
-            btn.GetComponent<Renderer>().material.color = Color.grey;
+            btn.GetComponent<Renderer>().material = originMat;
         }
         
         yield return null;
     }
 
-    public IEnumerator lightFlashKeys(Color col, bool flash)
+    public IEnumerator lightFlashKeys(Material col, bool flash)
     {
         resetKeypad();
         if (flash)
         {
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = col;
+                btn.GetComponent<Renderer>().material = col;
             }
             yield return new WaitForSeconds(0.2f);
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = Color.grey;
+                btn.GetComponent<Renderer>().material = originMat;
             }
         }
         foreach (GameObject btn in keyButtons)
         {
-            btn.GetComponent<Renderer>().material.color = Color.grey;
+            btn.GetComponent<Renderer>().material = originMat;
         }
 
         yield return null;

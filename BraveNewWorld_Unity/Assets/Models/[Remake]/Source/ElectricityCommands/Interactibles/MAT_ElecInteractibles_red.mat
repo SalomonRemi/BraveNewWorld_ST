@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: MAT_DoorButtons
+  m_Name: MAT_ElecInteractibles_red
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 1
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: e5c0bfdae0732604490d388579e07a12, type: 3}
+        m_Texture: {fileID: 2800000, guid: 41d48398720185e4e99f9814cfade933, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -35,15 +35,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 7c6842185ebefdd4193025d1e96bf8d5, type: 3}
+        m_Texture: {fileID: 2800000, guid: e39f003e302eab44eb2496d32e193d27, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 62ebd3ac3cc56534092a3255013d6e72, type: 3}
+        m_Texture: {fileID: 2800000, guid: 710e49930c9f18d42b4778691796939f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 43dfed201e58bf94eab2df0e1f39e516, type: 3}
+        m_Texture: {fileID: 2800000, guid: 10d71bf9fb7d9c249850aeaa7ec28ca3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -73,4 +73,4 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
+    - _EmissionColor: {r: 1, g: 0, b: 0, a: 1}

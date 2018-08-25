@@ -14,7 +14,10 @@ public class PuzzleSlider : MonoBehaviour {
 
     private MeshRenderer mr;
 
-    [HideInInspector] public Color currentMatColor;
+    public Material greenMat;
+    public Material originMat;
+
+    [HideInInspector] public Material currentMatColor;
 
     private Animator anim;
 
@@ -24,9 +27,7 @@ public class PuzzleSlider : MonoBehaviour {
         mr = GetComponent<MeshRenderer>();
         anim = GetComponent<Animator>();
 
-        if (!isValidate) mr.material.color = Color.white;
-
-        currentMatColor = mr.material.color;
+        currentMatColor = originMat;
 	}
 
     public void SliderInteraction()
@@ -36,16 +37,16 @@ public class PuzzleSlider : MonoBehaviour {
 
         if(isActivated)
         {
-            mr.material.color = Color.green;
-            currentMatColor = mr.material.color;
+            mr.material = greenMat;
+            currentMatColor = greenMat;
             anim.SetBool("Activated", true);
             realSliderValue = sliderValue;
             AudioManager.instance.PlaySound("openDesks");
         }
         else
         {
-            mr.material.color = Color.white;
-            currentMatColor = mr.material.color;
+            mr.material = originMat;
+            currentMatColor = originMat;
             anim.SetBool("Activated", false);
             realSliderValue = 1;
             AudioManager.instance.PlaySound("closeDesks");

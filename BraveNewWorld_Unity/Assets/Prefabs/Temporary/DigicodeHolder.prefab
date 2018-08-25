@@ -2218,7 +2218,7 @@ Light:
   m_SpotAngle: 48.452343
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2296,6 +2296,9 @@ MonoBehaviour:
   - {fileID: 1933763136362836}
   enabledAmmount: 0
   keycode: 0
+  redMat: {fileID: 2100000, guid: dade3ad4ea7e3694db4baf7380c0b731, type: 2}
+  greenMat: {fileID: 2100000, guid: 68b1459cad85750459efb06933521824, type: 2}
+  originMat: {fileID: 2100000, guid: 06500a9141569dd48bd4cff919be9439, type: 2}
   ep: {fileID: 0}
 --- !u!114 &114046960740445714
 MonoBehaviour:

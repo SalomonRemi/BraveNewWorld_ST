@@ -54,7 +54,8 @@ public class keyBtn : MonoBehaviour {
 		if (validate && parent.keyPressed.Count > 0) // VALIDER
 		{ 
 			parent.ComfirmInput();
-		} 
+            AudioManager.instance.PlaySound("clickBtn");
+        } 
 		else if(validate && parent.keyPressed.Count == 0) AudioManager.instance.PlaySound("buttonFalse");
 
 		if (parent.enabledAmmount < MissionManager.instance.doorAmmount && !clicked && !validate)// ACTIVER UN BOUTON

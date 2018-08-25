@@ -21,12 +21,24 @@ public class digicodeBtn : MonoBehaviour {
     {
         if (validate) //  && parent.enabledAmmount == 4 && !MissionManager.instance.keyPadCorrect
         {
-            parent.validateInput();
+            if(parent.keycode == 0)
+            {
+                AudioManager.instance.PlaySound("buttonFalse");
+            }
+            else parent.validateInput();
         }
         else if(reset)
         {
-            parent.keycode = 0;
-            parent.enabledAmmount = 0;
+            if(parent.keycode == 0)
+            {
+                AudioManager.instance.PlaySound("buttonFalse");
+            }
+            else
+            {
+                parent.keycode = 0;
+                parent.enabledAmmount = 0;
+                AudioManager.instance.PlaySound("clickBtn");
+            }
         }
         else if (parent.enabledAmmount < 4 && !clicked)
         {

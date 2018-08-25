@@ -11,6 +11,9 @@ public class ExePuzzle : MonoBehaviour {
     public digiCode digicode;
     public Keypad keypad;
 
+    public Material redDigiMat;
+    public Material redKeypadMat;
+
     [HideInInspector] public bool puzzleDone;
     [HideInInspector] public bool puzzleOk;
     [HideInInspector] public bool nextStep;
@@ -52,8 +55,8 @@ public class ExePuzzle : MonoBehaviour {
 
         StopAllCoroutines();
 
-        StartCoroutine(keypad.flashKeys(Color.red, true));
-        StartCoroutine(digicode.flashKeys(Color.red, true));
+        StartCoroutine(keypad.flashKeys(redKeypadMat, true));
+        StartCoroutine(digicode.flashKeys(redDigiMat, true));
         AudioManager.instance.PlaySound("digiError");
 
         StartCoroutine(RestartPuzzle());

@@ -8,9 +8,12 @@ public class flipSwitch : MonoBehaviour {
     private Animator anim;
     public bool switchOn = false;
 
+    private MeshCollider col;
+
     private void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponentInParent<Animator>();
+        col = GetComponent<MeshCollider>();
     }
 
     public void flip()
@@ -22,9 +25,10 @@ public class flipSwitch : MonoBehaviour {
         else
         {
             switchOn = true;
+            col.enabled = false;
         }
 
-        anim.SetTrigger("switch");
+        anim.SetBool("doSwitch", true);
 
         AudioManager.instance.PlaySound("leverMove");
     }

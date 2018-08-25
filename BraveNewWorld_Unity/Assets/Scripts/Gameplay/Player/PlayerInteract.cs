@@ -272,6 +272,16 @@ public class PlayerInteract : MonoBehaviour {
 
                     interactInputImage.gameObject.SetActive(true);
                 }
+                else if (hitInfo.transform.gameObject.CompareTag("lever"))
+                {
+                    interactionObjectText.gameObject.SetActive(true);
+                    interactionObjectText.text = "Lever";
+
+                    interactionVerbText.gameObject.SetActive(true);
+                    interactionVerbText.text = "Flip";
+
+                    interactInputImage.gameObject.SetActive(true);
+                }
             }
             else
             {

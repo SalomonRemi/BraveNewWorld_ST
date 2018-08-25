@@ -14,7 +14,11 @@ public class Keypad : MonoBehaviour {
 
 	public List<int> keyPressed = new List<int>();
 
-	void Start ()
+    public Material originalMat;
+    public Material greenMat;
+    public Material redMat;
+
+    void Start ()
     {
         enabledAmmount = 0;
         canUse = true;
@@ -70,11 +74,11 @@ public class Keypad : MonoBehaviour {
                 }
                 if (GameManager.instance.flashKeypad)
                 {
-                    StartCoroutine(flashKeys(Color.green, true));
+                    StartCoroutine(flashKeys(greenMat, true));
                 }
                 else
                 {
-                    StartCoroutine(flashKeys(Color.green, false));
+                    StartCoroutine(flashKeys(greenMat, false));
                 }
                 AudioManager.instance.PlaySound("digiOkSound");
                 MissionManager.instance.keyPadCorrect = true;
@@ -86,7 +90,7 @@ public class Keypad : MonoBehaviour {
                     btn.GetComponent<keyBtn>().clicked = false;
                 }
                 AudioManager.instance.PlaySound("digiError");
-                StartCoroutine(flashKeys(Color.red, true));
+                StartCoroutine(flashKeys(redMat, true));
             }
         }
         else if(MissionManager.instance.inExePuzzle)
@@ -99,11 +103,11 @@ public class Keypad : MonoBehaviour {
                 }
                 if (GameManager.instance.flashKeypad)
                 {
-                    StartCoroutine(lightFlashKeys(Color.green, true));
+                    StartCoroutine(lightFlashKeys(greenMat, true));
                 }
                 else
                 {
-                    StartCoroutine(flashKeys(Color.green, false));
+                    StartCoroutine(flashKeys(greenMat, false));
                 }
 
                 ep.nextStep = true;
@@ -116,11 +120,11 @@ public class Keypad : MonoBehaviour {
                 }
                 if (GameManager.instance.flashKeypad)
                 {
-                    StartCoroutine(flashKeys(Color.green, true));
+                    StartCoroutine(flashKeys(greenMat, true));
                 }
                 else
                 {
-                    StartCoroutine(flashKeys(Color.green, false));
+                    StartCoroutine(flashKeys(greenMat, false));
                 }
                 AudioManager.instance.PlaySound("digiOkSound");
             }
@@ -142,7 +146,7 @@ public class Keypad : MonoBehaviour {
         {
             if (btn.GetComponent<keyBtn>().clicked)
             {
-                btn.GetComponent<Renderer>().material.color = Color.grey;
+                btn.GetComponent<Renderer>().material = originalMat;
                 btn.GetComponent<keyBtn>().clicked = false;
             }
         }
@@ -150,7 +154,7 @@ public class Keypad : MonoBehaviour {
 		keyPressed.Clear ();
     }
 
-    public IEnumerator flashKeys(Color col, bool flash)
+    public IEnumerator flashKeys(Material col, bool flash)
     {
         if (flash)
         {
@@ -158,45 +162,45 @@ public class Keypad : MonoBehaviour {
 
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = col;
+                btn.GetComponent<Renderer>().material = col;
             }
             yield return new WaitForSeconds(0.2f);
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = Color.grey;
+                btn.GetComponent<Renderer>().material = originalMat;
             }
             yield return new WaitForSeconds(0.2f);
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = col;
+                btn.GetComponent<Renderer>().material = col;
             }
             yield return new WaitForSeconds(0.2f);
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = Color.grey;
+                btn.GetComponent<Renderer>().material = originalMat;
             }
             yield return new WaitForSeconds(0.2f);
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = col;
+                btn.GetComponent<Renderer>().material = col;
             }
             yield return new WaitForSeconds(0.2f);
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = Color.grey;
+                btn.GetComponent<Renderer>().material = originalMat;
             }
 
             canUse = true;
         }
         foreach (GameObject btn in keyButtons)
         {
-            btn.GetComponent<Renderer>().material.color = Color.grey;
+            btn.GetComponent<Renderer>().material = originalMat;
         }
         resetKeypad();
         yield return null;
     }
 
-    public IEnumerator lightFlashKeys(Color col, bool flash)
+    public IEnumerator lightFlashKeys(Material col, bool flash)
     {
         if (flash)
         {
@@ -204,12 +208,12 @@ public class Keypad : MonoBehaviour {
 
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = col;
+                btn.GetComponent<Renderer>().material = col;
             }
             yield return new WaitForSeconds(0.4f);
             foreach (GameObject btn in keyButtons)
             {
-                btn.GetComponent<Renderer>().material.color = Color.grey;
+                btn.GetComponent<Renderer>().material = originalMat;
             }
             yield return new WaitForSeconds(0.2f);
 
@@ -217,7 +221,7 @@ public class Keypad : MonoBehaviour {
         }
         foreach (GameObject btn in keyButtons)
         {
-            btn.GetComponent<Renderer>().material.color = Color.grey;
+            btn.GetComponent<Renderer>().material = originalMat;
         }
         resetKeypad();
         yield return null;
