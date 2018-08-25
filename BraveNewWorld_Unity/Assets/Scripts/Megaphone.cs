@@ -39,6 +39,13 @@ public class Megaphone : MonoBehaviour
         col.enabled = true;
     }
 
+    public void TurnOffMegaphone() //CALL ON ALARM
+    {
+        nodeMr.material.color = Color.red;
+        isActivated = false;
+        col.enabled = false;
+    }
+
 
     public void StartMegaphone() //CALL ON BUTTON PRESS ON
     {

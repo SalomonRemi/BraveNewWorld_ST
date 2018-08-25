@@ -67,3 +67,19 @@ MonoBehaviour:
     noisePercent: 1
     dampingPercent: 0
     rotationPercent: 0
+  accidentShake:
+    angle: 0
+    strength: 0.2
+    speed: 5
+    duration: 0.3
+    noisePercent: 1
+    dampingPercent: 0
+    rotationPercent: 0
+  alarmShake:
+    angle: 0
+    strength: 0.08
+    speed: 8
+    duration: 120
+    noisePercent: 1
+    dampingPercent: 0
+    rotationPercent: 0

@@ -8,7 +8,13 @@ public class ElectricPowerButton : MonoBehaviour {
     public List<GameObject> objectList;
 
     private bool isActivated;
-	
+    private Collider col;
+
+    private void Start()
+    {
+        col = GetComponent<Collider>();
+    }
+
     public void EnableObjects()
     {
         if(!isActivated)
@@ -22,5 +28,7 @@ public class ElectricPowerButton : MonoBehaviour {
 
             isActivated = true;
         }
+
+        col.enabled = false;
     }
 }

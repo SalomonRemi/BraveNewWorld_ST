@@ -9,6 +9,7 @@ public class ScreenshakeManager : MonoBehaviour {
     public CameraShake.Properties elevatorLongShake;
     public CameraShake.Properties elevatorEndShake;
     public CameraShake.Properties accidentShake;
+    public CameraShake.Properties alarmShake;
 
     private bool isInElevator = true;
 
@@ -33,6 +34,11 @@ public class ScreenshakeManager : MonoBehaviour {
     public void DoAccidentShake()
     {
         FindObjectOfType<CameraShake>().StartShake(accidentShake);
+    }
+
+    public void DoAlarmShake()
+    {
+        FindObjectOfType<CameraShake>().StartShake(alarmShake);
     }
 
     IEnumerator TimingCoroutine()

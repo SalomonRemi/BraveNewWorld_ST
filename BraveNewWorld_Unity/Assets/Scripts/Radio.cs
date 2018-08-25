@@ -36,6 +36,13 @@ public class Radio : MonoBehaviour {
         col.enabled = true;
     }
 
+    public void TurnOffRadio() //CALL ON ALARM
+    {
+        nodeMr.material.color = Color.red;
+        isActivated = false;
+        col.enabled = false;
+    }
+
 
     public void StartRadio() //CALL ON BUTTON PRESS ON
     {
