@@ -19,7 +19,7 @@ public class ElectricPowerButton : MonoBehaviour {
     {
         if(!isActivated)
         {
-            AudioManager.instance.PlaySound("lockerButton");
+            AudioManager.instance.PlaySound("powerButton");
 
             for (int i = 0; i < objectList.Count; i++)
             {

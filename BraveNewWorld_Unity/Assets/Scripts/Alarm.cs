@@ -11,6 +11,8 @@ public class Alarm : MonoBehaviour
     public Megaphone megaphone;
     public Radio radio;
 
+    public GameObject alarmSound;
+
     private Collider col;
 
     public void TurnOnAlarm() //CALL ON ELECTRIC PANNEL GOOD
@@ -30,9 +32,10 @@ public class Alarm : MonoBehaviour
         radio.TurnOffRadio();
 
         AudioManager.instance.StopMusic();
-        //AudioManager.instance.PlayMusic("");
 
         ScreenshakeManager.instance.DoAlarmShake();
         FindObjectOfType<DialogSystem>().EndDialogue();
+
+        alarmSound.SetActive(true);
     }
 }

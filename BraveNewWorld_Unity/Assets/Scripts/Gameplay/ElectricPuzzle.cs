@@ -126,42 +126,42 @@ public class ElectricPuzzle : MonoBehaviour {
         {
             slider.gameObject.GetComponent<MeshRenderer>().material = flashColor;
         }
-        validateButton.GetComponent<MeshRenderer>().material = flashColor;
+        //validateButton.GetComponent<MeshRenderer>().material = flashColor;
         yield return new WaitForSeconds(0.2f);
 
         foreach (PuzzleSlider slider in sliderList)
         {
             slider.gameObject.GetComponent<MeshRenderer>().material = originalMat;
         }
-        validateButton.GetComponent<MeshRenderer>().material = originalMat;
+        //validateButton.GetComponent<MeshRenderer>().material = originalMat;
         yield return new WaitForSeconds(0.2f);
 
         foreach (PuzzleSlider slider in sliderList)
         {
             slider.gameObject.GetComponent<MeshRenderer>().material = flashColor;
         }
-        validateButton.GetComponent<MeshRenderer>().material = flashColor;
+        //validateButton.GetComponent<MeshRenderer>().material = flashColor;
         yield return new WaitForSeconds(0.2f);
 
         foreach (PuzzleSlider slider in sliderList)
         {
             slider.gameObject.GetComponent<MeshRenderer>().material = originalMat;
         }
-        validateButton.GetComponent<MeshRenderer>().material = originalMat;
+        //validateButton.GetComponent<MeshRenderer>().material = originalMat;
         yield return new WaitForSeconds(0.2f);
 
         foreach (PuzzleSlider slider in sliderList)
         {
             slider.gameObject.GetComponent<MeshRenderer>().material = flashColor;
         }
-        validateButton.GetComponent<MeshRenderer>().material = flashColor;
+        //validateButton.GetComponent<MeshRenderer>().material = flashColor;
         yield return new WaitForSeconds(0.2f);
 
         foreach (PuzzleSlider slider in sliderList)
         {
             slider.gameObject.GetComponent<MeshRenderer>().material = originalMat;
         }
-        validateButton.GetComponent<MeshRenderer>().material = originalMat;
+        //validateButton.GetComponent<MeshRenderer>().material = originalMat;
         yield return new WaitForSeconds(0.2f);
 
 
@@ -169,7 +169,7 @@ public class ElectricPuzzle : MonoBehaviour {
         {
             slider.gameObject.GetComponent<MeshRenderer>().material = slider.currentMatColor;
         }
-        validateButton.GetComponent<MeshRenderer>().material = validateButton.GetComponent<PuzzleSlider>().currentMatColor;
+        //validateButton.GetComponent<MeshRenderer>().material = validateButton.GetComponent<PuzzleSlider>().currentMatColor;
 
         yield return null;
     }
