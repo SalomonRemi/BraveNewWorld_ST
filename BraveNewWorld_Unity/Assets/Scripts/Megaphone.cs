@@ -77,10 +77,25 @@ public class Megaphone : MonoBehaviour
     {
         Dialogue dialogue1 = new Dialogue();
 
-        if(angryCounter == 0) dialogue1.sentences.Add("This is the first time I speak, please kill kreep with Digicode !");
-        else if (angryCounter == 1) dialogue1.sentences.Add("Wow bad network hey stay focus ! Kill kreep with Digicode !");
-        else if (angryCounter == 2) dialogue1.sentences.Add("What the fuck dude, I can't ear you. You need to kill kreep the son of shmeh");
-        else if (angryCounter == 3) dialogue1.sentences.Add("This is the last fucking time... I'am crazy you bloody kreep I want him to die !");
+        if (angryCounter == 0)
+        {
+            dialogue1.sentences.Add("Tiens tu es là ? Cette salle est inutilisée depuis longtemps… Laisse moi le temps de retrouver les caméras… Ah parfait !");
+            dialogue1.sentences.Add("Mais qu’est-ce que… Oscar ? C’est lui sur le sol ? Cette saloperie de groupe révolutionnaire aura fini par le tuer, on dirait qu’on a bien fait de le remplacer !");
+            dialogue1.sentences.Add("Nous sommes en train de fouiller ses affaires dans votre bureau, il semblerait qu’il ait été manipulé par Kreep, le leader de ce groupe extrémiste.");
+            dialogue1.sentences.Add("Nous savons qu’Oscar était le garant de son identité. Wilson, rendez-nous service, trouvez l’identifiant de Kreep et transmettez le moi.”");
+        }
+        else if (angryCounter == 1)
+        {
+            dialogue1.sentences.Add("Erm, ces vieux mégaphones ne sont pas fiables, faites vite Wilson, trouvez l’identifiant du terroriste Kreep, nous saurons vous récompenser !");
+        }
+        else if (angryCounter == 2)
+        {
+            dialogue1.sentences.Add("Ca n’arrête pas de couper, je vais commencer à croire que vous le faites exprès ! Transmettez-nous l’identifiant de Kreep ou nous viendrons le faire à votre place.");
+        }
+        //else if (angryCounter == 3)
+        //{
+        //    dialogue1.sentences.Add("This is the last fucking time... I'am crazy you bloody kreep I want him to die !");
+        //}
         FindObjectOfType<DialogSystem>().StartDialogue(dialogue1);
 
         //SON DIALOGUE

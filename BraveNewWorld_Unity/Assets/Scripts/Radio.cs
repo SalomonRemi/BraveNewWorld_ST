@@ -71,7 +71,8 @@ public class Radio : MonoBehaviour {
     IEnumerator RadioMessage()
     {
         Dialogue dialogue1 = new Dialogue();
-        dialogue1.sentences.Add("Kreep message where he's saying stuff about revolution");
+        dialogue1.sentences.Add("10 Décembre 630. Kreep. Kreep. Cet enregistrement est le dernier du plan, la dernière marche à franchir avant de changer le monde.");
+        dialogue1.sentences.Add("Le code de la mallette que je vous ai confié correspond à l’année à laquelle nous nous sommes rencontrés.");
         FindObjectOfType<DialogSystem>().StartDialogue(dialogue1);
 
         //SON DIALOGUE
