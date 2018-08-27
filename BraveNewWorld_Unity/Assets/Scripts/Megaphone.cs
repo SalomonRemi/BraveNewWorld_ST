@@ -7,9 +7,6 @@ using DigitalRuby.SoundManagerNamespace;
 public class Megaphone : MonoBehaviour
 {
 
-    public string startMegaphoneName;
-    public string cutMegaphoneName;
-
     public GameObject node;
 
     public Animator megaphoneAnim;
@@ -68,7 +65,7 @@ public class Megaphone : MonoBehaviour
         AudioManager.instance.PlaySound("lockerButton");
         AudioManager.instance.StopMusic();
 
-        FindObjectOfType<DialogSystem>().EndDialogue();
+        FindObjectOfType<DialogSystem>().EndDialogue(); //BUG HERE
 
         StartCoroutine(ClickCooldown());
     }
