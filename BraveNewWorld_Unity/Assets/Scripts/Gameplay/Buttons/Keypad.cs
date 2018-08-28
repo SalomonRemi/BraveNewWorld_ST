@@ -37,16 +37,16 @@ public class Keypad : MonoBehaviour {
 
 			if (btn.GetComponent<keyBtn> ().clicked)
 			{
-				//newScale.y = 1.3f;
+				newScale.y = 0.7f;
 				btn.GetComponent<keyBtn>().support.GetComponent<MeshRenderer> ().material.color = Color.green;
 			} 
 			else
 			{
-				//newScale.y = 3.3f;
+				newScale.y = 2f;
 				btn.GetComponent<keyBtn>().support.GetComponent<MeshRenderer> ().material.color = Color.black;
 			}
 
-			btn.transform.localScale = newScale;
+			btn.transform.parent.localScale = newScale;
 
             if (GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerInteract>().isSitting)
             {
