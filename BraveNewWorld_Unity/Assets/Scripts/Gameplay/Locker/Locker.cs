@@ -7,31 +7,32 @@ public class Locker : MonoBehaviour {
 
 	public List<GameObject> lockerNum;
 
-	public string objectAnimClipName;
-    public string soundPlay;
-
-    public bool isVent;
-    public bool isOscarLocker;
-
-	private Animator objectAnim;
+    public Animator objectAnim;
+    public Animator secondObjectAnim;
 
     [HideInInspector] public bool codeOk;
 
     private bool feedbackDone;
 
-	private void Start()
-	{
-		objectAnim = GetComponentInParent<Animator>();
-	}
+    private bool findCode1;
+    private bool findCode2;
 
 
     private void Update()
     {
-        CheckIfGoodCode();
+        if(!findCode1)
+        {
+            CheckIfGoodCode();
+        }
+
+        if(!findCode2)
+        {
+            CheckIfGoodCode2();
+        }
     }
 
 
-    private void CheckIfGoodCode()
+    private void CheckIfGoodCode() //vent
     {
         int validateNumber = 0;
 
@@ -45,37 +46,38 @@ public class Locker : MonoBehaviour {
         {
             codeOk = true;
 
-            if(!feedbackDone) StartCoroutine(Feedback());
+            if(!feedbackDone) StartCoroutine(Feedback(objectAnim, "ventsOpen", true));
 
-			for (int i = 0; i < lockerNum.Count; i++)
-			{
-				Collider[] col = lockerNum [i].GetComponentsInChildren<Collider>(); 
-
-				foreach (Collider c in col)
-				{
-					c.enabled = false;
-				}
-			}
+            findCode1 = true;
         }
     }
 
-    public IEnumerator Feedback()
+    private void CheckIfGoodCode2()
     {
-        objectAnim.SetBool(objectAnimClipName, true);
-        AudioManager.instance.PlaySound(soundPlay);
+        int validateNumber = 0;
 
-        Debug.Log("wow");
-
-        if (isOscarLocker && !MissionManager.instance.isInLastPuzzle)
+        for (int i = 0; i < lockerNum.Count; i++)
         {
-            AudioManager.instance.StopMusic();
-            AudioManager.instance.PlayMusic("escapeWarn01");
-
-            Dialogue dialogue = new Dialogue();
-            dialogue.sentences.Add("Qu'est ce que vous faites ?! Je vous ai dit de ne pas toucher aux affaires d'Oscar. Laissez ce casier et reprenez le travail.");
-            FindObjectOfType<DialogSystem>().StartDialogue(dialogue);
+            LockerNum ln = lockerNum[i].GetComponent<LockerNum>();
+            if (ln.isGoodNumber2) validateNumber++;
         }
-        else if(isVent && !MissionManager.instance.isInLastPuzzle)
+
+        if (validateNumber == lockerNum.Count)
+        {
+            codeOk = true;
+
+            if (!feedbackDone) StartCoroutine(Feedback(secondObjectAnim, "powerButton", false));
+
+            findCode2 = true;
+        }
+    }
+
+    public IEnumerator Feedback(Animator anim, string soundName, bool doDialogs)
+    {
+        anim.SetBool("open", true);
+        AudioManager.instance.PlaySound(soundName);
+
+        if(!MissionManager.instance.isInLastPuzzle && doDialogs) // && isVents
         {
             AudioManager.instance.StopMusic();
             AudioManager.instance.PlayMusic("escapeWarn02");
@@ -85,8 +87,18 @@ public class Locker : MonoBehaviour {
             FindObjectOfType<DialogSystem>().StartDialogue(dialogue1);
         }
 
+        //if (isOscarLocker && !MissionManager.instance.isInLastPuzzle)
+        //{
+        //    AudioManager.instance.StopMusic();
+        //    AudioManager.instance.PlayMusic("escapeWarn01");
+
+        //    Dialogue dialogue = new Dialogue();
+        //    dialogue.sentences.Add("Qu'est ce que vous faites ?! Je vous ai dit de ne pas toucher aux affaires d'Oscar. Laissez ce casier et reprenez le travail.");
+        //    FindObjectOfType<DialogSystem>().StartDialogue(dialogue);
+        //}
+
         yield return null;
 
-        feedbackDone = true;
+        //feedbackDone = true;
     }
 }

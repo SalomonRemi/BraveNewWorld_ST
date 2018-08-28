@@ -15,9 +15,9 @@ public class CasierCollider : MonoBehaviour {
 
     void Update ()
     {
-		if(localLocker.codeOk)
+        if (localLocker.codeOk)
         {
             col.enabled = false;
         }
-	}
+    }
 }

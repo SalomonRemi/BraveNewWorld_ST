@@ -6,8 +6,10 @@ using TMPro;
 public class LockerNum : MonoBehaviour {
 
     public int goodNumber;
+    public int goodNumber2;
 
     [HideInInspector] public bool isGoodNumber;
+    [HideInInspector] public bool isGoodNumber2;
 
     private int actualNumber = 1;
     private TextMeshPro displayText;
@@ -25,6 +27,9 @@ public class LockerNum : MonoBehaviour {
 
         if (goodNumber == actualNumber) isGoodNumber = true;
         else isGoodNumber = false;
+
+        if (goodNumber2 == actualNumber) isGoodNumber2 = true;
+        else isGoodNumber2 = false;
     }
 
 
