@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65971033746456174}
   - component: {fileID: 114035709412441544}
   - component: {fileID: 114049948776575436}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: doc_protocol_2
   m_TagString: document
   m_Icon: {fileID: 0}
@@ -36,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1786586235743866}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05934316, y: 0.059343174, z: 0.031558868}
+  m_LocalRotation: {x: 0.6244898, y: -0.331679, z: 0.33167997, w: 0.62449175}
+  m_LocalPosition: {x: 3.328, y: 0.948, z: 5.905}
+  m_LocalScale: {x: 0.05934316, y: 0.059343234, z: 0.031558897}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 55.947002}
 --- !u!65 &65971033746456174
 BoxCollider:
   m_ObjectHideFlags: 1
