@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 23951671903685284}
   - component: {fileID: 65506564187262860}
   - component: {fileID: 114527247447054554}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pass_Office
   m_TagString: door
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 65793624428814448}
   - component: {fileID: 114799910702102138}
   - component: {fileID: 114707038075981228}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Pass_Corridor
   m_TagString: doorButton
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1539805654723020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.239, y: -0.24911427, z: -0.379}
+  m_LocalPosition: {x: -0.23684011, y: -0.2604167, z: -0.32499722}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4226790473838548}
@@ -296,7 +296,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1412564631805706}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.012, y: -0.24907565, z: -0.315}
+  m_LocalPosition: {x: 0.00000039762196, y: -0.2604167, z: -0.32499695}
   m_LocalScale: {x: -1, y: 1, z: -1}
   m_Children:
   - {fileID: 4950483123702552}
@@ -338,8 +338,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1048924904599718}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000058114523}
-  m_LocalPosition: {x: 9.883999, y: 1.726, z: 16.746998}
-  m_LocalScale: {x: 1, y: 0.975, z: 1}
+  m_LocalPosition: {x: 9.888, y: 1.734, z: 16.649998}
+  m_LocalScale: {x: 0.947, y: 0.96, z: 1.3975346}
   m_Children:
   - {fileID: 4968244351955696}
   - {fileID: 4530605525082798}
@@ -367,7 +367,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1619510621956422}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.117, y: -0.24907601, z: -0.378}
+  m_LocalPosition: {x: -0.105261154, y: -0.2604167, z: -0.32499707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4802538589784962}

@@ -56,6 +56,8 @@ MonoBehaviour:
   maxTime: 15
   digicode: {fileID: 0}
   keypad: {fileID: 0}
+  redDigiMat: {fileID: 2100000, guid: dade3ad4ea7e3694db4baf7380c0b731, type: 2}
+  redKeypadMat: {fileID: 2100000, guid: dade3ad4ea7e3694db4baf7380c0b731, type: 2}
   puzzleDone: 0
   puzzleOk: 0
   nextStep: 0
@@ -74,7 +76,6 @@ MonoBehaviour:
   timeInElevator: 26.5
   fadeTime: 5
   elevatorDoorAnim: {fileID: 0}
-  hallDoorAnim: {fileID: 0}
   doorRoomAnim: {fileID: 0}
   blockView: {fileID: 0}
   tutoMoveObject: {fileID: 0}
@@ -91,13 +92,13 @@ MonoBehaviour:
   goToNextStep: 0
   isInElevator: 0
   isInHall: 0
+  enterInHall: 0
   enterInRoom: 0
   closeDoor: 0
   isAtDesk: 0
-  timeBeforeRandTalk: 150
-  timeBeforeHint: 225
   levier: {fileID: 0}
   commandPanel: {fileID: 0}
+  bedroomDoor: {fileID: 0}
   digicode: {fileID: 0}
   keypad: {fileID: 0}
   finishedLevel: 0
@@ -108,12 +109,23 @@ MonoBehaviour:
   inExePuzzle: 0
   canStartExePuzzle: 0
   isInLastPuzzle: 0
+  isInVents: 0
   recapText: {fileID: 0}
-  oscarOrderText: {fileID: 0}
   flipper: {fileID: 0}
   digiTxt: {fileID: 0}
+  puzzle1RandTalkTime: 30
+  puzzle1HintTalkTime: 60
+  puzzle2RandTalkTime: 30
+  puzzle2HintTalkTime: 60
+  puzzle4RandTalkTime: 50
+  puzzle4HintTalkTime: 80
+  puzzle5RandTalkTime: 50
+  puzzle5HintTalkTime: 90
+  puzzle7RandTalkTime: 50
+  puzzle7HintTalkTime: 90
   debugTransform: {fileID: 0}
   agent: {fileID: 0}
+  digicodeMat: {fileID: 2100000, guid: 06500a9141569dd48bd4cff919be9439, type: 2}
   digiFinishPuzzle: 0
   inLastPuzzle: 0
   searchJack: 0
