@@ -37,5 +37,7 @@ public class Alarm : MonoBehaviour
         FindObjectOfType<DialogSystem>().EndDialogue();
 
         alarmSound.SetActive(true);
+
+        EndingManager.instance.StartKreepEnding(); //START ENDING
     }
 }

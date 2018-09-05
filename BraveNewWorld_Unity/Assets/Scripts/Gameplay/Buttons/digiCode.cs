@@ -168,6 +168,9 @@ public class digiCode : MonoBehaviour {
                 btn.GetComponent<Renderer>().material = greenMat;
             }
             AudioManager.instance.PlaySound("digiOkSound");
+
+            EndingManager.instance.StartCorporateEnding(); // STARTENDING
+
             return true;
         }
         else 
