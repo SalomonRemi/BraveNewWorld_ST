@@ -76,14 +76,13 @@ public class Megaphone : MonoBehaviour
 
         if (angryCounter == 0)
         {
-            dialogue1.sentences.Add("Tiens tu es là ? Cette salle est inutilisée depuis longtemps… Laisse moi le temps de retrouver les caméras… Ah parfait !");
-            dialogue1.sentences.Add("Mais qu’est-ce que… Oscar ? C’est lui sur le sol ? Cette saloperie de groupe révolutionnaire aura fini par le tuer, on dirait qu’on a bien fait de le remplacer !");
-            dialogue1.sentences.Add("Nous sommes en train de fouiller ses affaires dans votre bureau, il semblerait qu’il ait été manipulé par Kreep, le leader de ce groupe extrémiste.");
-            dialogue1.sentences.Add("Nous savons qu’Oscar était le garant de son identité. Wilson, rendez-nous service, trouvez l’identifiant de Kreep et transmettez le moi.”");
+            dialogue1.sentences.Add("Tiens tu es là ? Eh bien on dirait que tu as trouvé Oscar ! Bien joué !");
+            dialogue1.sentences.Add("Dis moi maintenant que tu es là tu ne voudrais pas jeter un oeil dans la pièce ?");
+            dialogue1.sentences.Add("Tu nous rendrais un grand service si tu trouvais l’identifiant de Kreep, c’est un ancien collègue qui a perdu sa fiche d’identité, j’aimerais la lui signaler !");
         }
         else if (angryCounter == 1)
         {
-            dialogue1.sentences.Add("Erm, ces vieux mégaphones ne sont pas fiables, faites vite Wilson, trouvez l’identifiant du terroriste Kreep, nous saurons vous récompenser !");
+            dialogue1.sentences.Add("*Erm* Ces vieux mégaphones ne sont pas fiables, faites vite Wilson, trouvez l’identifiant de mon ami Kreep, l’usine vous en sera reconnaissante.");
         }
         else if (angryCounter == 2)
         {

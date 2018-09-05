@@ -162,8 +162,8 @@ public class MissionManager : MonoBehaviour {
 
             AudioManager.instance.StopMusic();
 
-            StartCoroutine(startMission());
-            //StartCoroutine(mission7());
+            //StartCoroutine(startMission());
+            StartCoroutine(mission4());
 
             player.transform.position = debugTransform.position;
         }
@@ -259,9 +259,6 @@ public class MissionManager : MonoBehaviour {
 		Dialogue dialogueOrdre = new Dialogue();
 		dialogueOrdre.sentences.Add("Allez y je vous prie.");
 
-        //hallDoorAnim.SetBool("Open", true);
-        //AudioManager.instance.PlaySound("doorOpen");
-
         yield return new WaitForSeconds(1f);
 
 
@@ -311,7 +308,7 @@ public class MissionManager : MonoBehaviour {
 		//intro4
 		Dialogue dialogue4 = new Dialogue();
 		dialogue4.sentences.Add("Suite à l’incident de ce matin, les portes restent fermées durant les heures de travail.");
-		dialogue4.sentences.Add("Ne vous en faites pas je vous accompagnerai le temps de vous apprendre le métier. Commencez par vous placer devant le panneau de commande.");
+		dialogue4.sentences.Add("Commencez par vous placer devant le panneau de commande.");
 
         FindObjectOfType<DialogSystem>().StartDialogue(dialogue4);
 
@@ -522,12 +519,12 @@ public class MissionManager : MonoBehaviour {
         randomTalkRoutine = StartCoroutine(randomTalk(puzzleNum, puzzle4RandTalkTime));
         giveHintRoutine = StartCoroutine(GiveHint(puzzleNum, puzzle4HintTalkTime));
 
-        Dialogue dialogue = new Dialogue ();
-        dialogue.sentences.Add ("Très bien, je sens que vous avez compris ce que l’entreprise attend de vous.\n Vous n’êtes pas comme votre prédécesseur.");
-		dialogue.sentences.Add ("Bref, on vient de me faire parvenir qu’une livraison à été facturée \n et stockée en salle de fécondation, il y a 5 jours.");
-		dialogue.sentences.Add ("Avec tout ça, personne n’a eu le temps de s’en occuper. \n Trouvez sa destination et assurez son transfert.");
+        Dialogue dialogue1 = new Dialogue ();
+        dialogue1.sentences.Add ("Très bien, je sens que vous avez compris ce que l’entreprise attend de vous.\n Vous n’êtes pas comme votre prédécesseur.");
+		dialogue1.sentences.Add ("Bref, on vient de me faire parvenir qu’une livraison à été facturée \n et stockée en salle de fécondation, il y a 5 jours.");
+		dialogue1.sentences.Add ("Avec tout ça, personne n’a eu le temps de s’en occuper. \n Trouvez sa destination et assurez son transfert.");
 
-		FindObjectOfType<DialogSystem>().StartDialogue(dialogue);
+		FindObjectOfType<DialogSystem>().StartDialogue(dialogue1);
 
         AudioManager.instance.StopMusic();
         AudioManager.instance.PlayMusic("puzzle4");
@@ -535,7 +532,14 @@ public class MissionManager : MonoBehaviour {
         StartCoroutine(DisplayOrder(11f));
         orderText = "Trouvez la facture arrivée il y a 5 jours. La livraison est arrivée en salle de fécondation, permettez lui l'accès jusqu'à la salle concernée.";
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(22f);
+
+        Dialogue dialogue2 = new Dialogue();
+        dialogue2.sentences.Add("On dirait qu’Oscar a encore oublié des documents officiels dans son appartement…");
+        dialogue2.sentences.Add("Je vous ouvre la porte mais veillez à ne pas toucher aux documents personnels d’Oscar, vous ne voudriez pas violer son intimité n’est-ce pas ?");
+        FindObjectOfType<DialogSystem>().StartDialogue(dialogue2);
+
+        yield return new WaitForSeconds(6f);
 
         bedroomDoor.SetBool("open", true);
         AudioManager.instance.PlaySound("doorOpen");

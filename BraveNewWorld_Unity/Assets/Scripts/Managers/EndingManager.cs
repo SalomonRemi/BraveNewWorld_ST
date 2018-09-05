@@ -11,6 +11,7 @@ public class EndingManager : MonoBehaviour {
 
     private bool goToNextStep;
     [HideInInspector] public bool endDialogTrigger;
+    [HideInInspector] public bool liftDialogTrigger;
 
     void Awake()
     {
@@ -52,10 +53,33 @@ public class EndingManager : MonoBehaviour {
         }
 
         Dialogue dialogue1 = new Dialogue();
-        dialogue1.sentences.Add("This is the end, the society will collapse because YOU CHOOSE KREEP HAHA!");
+        dialogue1.sentences.Add("À tous les employés du CICL, je vous prie de garder votre calme. Vous avez sûrement déjà tous entendu mon nom, Kreep.");
+        dialogue1.sentences.Add("Aujourd’hui je vous offre la liberté, vous n’avez qu’à aller la saisir !");
+        dialogue1.sentences.Add("Plus personne ne vous fermera les portes, dirigez-vous comme un seul homme jusqu’aux bureaux des Alphas et prenez le !");
+        dialogue1.sentences.Add("De ces mêmes bureaux nous déclencherons les renversements dans tous les centres du monde.");
+        dialogue1.sentences.Add(" Soyez les acteurs du crépuscule de ce monde, nous allons en bâtir un nouveau, ensemble.");
+
         FindObjectOfType<DialogSystem>().StartDialogue(dialogue1);
 
         //AudioManager.instance.PlayMusic("outroKreepDialog01");
+
+        while (goToNextStep)
+        {
+            if (liftDialogTrigger)
+            {
+                goToNextStep = false;
+            }
+            yield return null;
+        }
+
+        Dialogue dialogue2 = new Dialogue();
+        dialogue2.sentences.Add("Bonjour Wilson. J’espère que vous allez bien. Nous ne nous connaissons pas mais c’est aujourd’hui grâce à vous que le rêve se réalise.");
+        dialogue2.sentences.Add("Vous avez fait le bon choix.Vous n’aimiez pas votre responsable n’est-ce pas ? ");
+        dialogue2.sentences.Add("Sachez qu’il n’est déjà plus de ce monde. Vous êtes libre Wilson, félicitations.");
+
+        FindObjectOfType<DialogSystem>().StartDialogue(dialogue2);
+
+        //AudioManager.instance.PlayMusic("outroKreepDialog02");
 
         yield return null;
     }
@@ -75,7 +99,10 @@ public class EndingManager : MonoBehaviour {
         }
 
         Dialogue dialogue1 = new Dialogue();
-        dialogue1.sentences.Add("Thanks you mate we killed Kreep, he was in 'the sink'. The center thanks you very much.");
+        dialogue1.sentences.Add("Un peu d’air ça fait du bien n’est-ce pas ? C’est que ça devait commencer à sentir là-dedans !");
+        dialogue1.sentences.Add("Kreep et moi-même vous remercions pour votre service, vous n’avez pas idée de l’aide précieuse que vous nous avez fourni !");
+        dialogue1.sentences.Add("Avancez jusqu’au bout du couloir et prenez l’ascenceur, je vous attendrai au 5ème étage nous avons à discuter.");
+        dialogue1.sentences.Add("Je vous laisse je dois régler 'quelque chose', à tout à l’heure !");
         FindObjectOfType<DialogSystem>().StartDialogue(dialogue1);
 
         //AudioManager.instance.PlayMusic("outroCorpoDialog01");
