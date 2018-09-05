@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114103654776281900}
   - component: {fileID: 65031700466963050}
   - component: {fileID: 114442546604325154}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: book_bills
   m_TagString: manual
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1747373782567536}
   m_LocalRotation: {x: 0.68301266, y: -0.6830126, z: -0.18301304, w: 0.18301307}
-  m_LocalPosition: {x: 53.401, y: 0.068, z: 65.764}
+  m_LocalPosition: {x: -1.196003, y: 0.089999974, z: 1.0199966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

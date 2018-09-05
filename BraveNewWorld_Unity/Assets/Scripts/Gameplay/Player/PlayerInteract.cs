@@ -54,7 +54,7 @@ public class PlayerInteract : MonoBehaviour {
 		if (Input.GetButtonDown ("Fire1"))
         {
 			RaycastHit hit;
-			if (Physics.Raycast (ray, out hit, rangetouch))
+			if (Physics.Raycast (ray, out hit, rangetouch, 1 << LayerMask.NameToLayer("Interactible")))
             {
 				if (isSitting)
                 {
@@ -126,7 +126,7 @@ public class PlayerInteract : MonoBehaviour {
         {
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, rangetouch))
+            if (Physics.Raycast(ray, out hit, rangetouch, 1 << LayerMask.NameToLayer("Interactible")))
             {
                 if (hit.transform.gameObject.CompareTag("manual"))
                 {
@@ -155,7 +155,7 @@ public class PlayerInteract : MonoBehaviour {
 		RaycastHit hitInfo;
 		Collider currRend;
 
-		if (Physics.Raycast (ray, out hitInfo, rangetouch))
+		if (Physics.Raycast (ray, out hitInfo, rangetouch, 1 << LayerMask.NameToLayer("Interactible")))
         {
 			if (hitInfo.collider.gameObject.GetComponent<highlightSelf> ())
             {
@@ -313,28 +313,28 @@ public class PlayerInteract : MonoBehaviour {
 
 
 
-	IEnumerator sitDown()
-    {
-		if (!isSitting)
-        {
-			isSitting = true;
-            yield return new WaitForSeconds(0.1f);
-            AudioManager.instance.PlaySound("sitDown");
-            prevSitpos = transform.position;
-			for (float i = 0; i < 10f; i += Time.deltaTime)
-            {
-				//transform.parent.transform.position = Vector3.Lerp (transform.position, chair.transform.position, i / Time.deltaTime);
-			}
-		}
-        else
-        {
-			isSitting = false;
-            AudioManager.instance.PlaySound("standUp");
-            for (float i = 0; i < 10f; i += Time.deltaTime)
-            {
-				transform.parent.transform.position = Vector3.Lerp (transform.position, prevSitpos,  i / Time.deltaTime);
-			}
-		}
-		yield return null;
-	}
+	//IEnumerator sitDown()
+ //   {
+	//	if (!isSitting)
+ //       {
+	//		isSitting = true;
+ //           yield return new WaitForSeconds(0.1f);
+ //           AudioManager.instance.PlaySound("sitDown");
+ //           prevSitpos = transform.position;
+	//		for (float i = 0; i < 10f; i += Time.deltaTime)
+ //           {
+	//			//transform.parent.transform.position = Vector3.Lerp (transform.position, chair.transform.position, i / Time.deltaTime);
+	//		}
+	//	}
+ //       else
+ //       {
+	//		isSitting = false;
+ //           AudioManager.instance.PlaySound("standUp");
+ //           for (float i = 0; i < 10f; i += Time.deltaTime)
+ //           {
+	//			transform.parent.transform.position = Vector3.Lerp (transform.position, prevSitpos,  i / Time.deltaTime);
+	//		}
+	//	}
+	//	yield return null;
+	//}
 }

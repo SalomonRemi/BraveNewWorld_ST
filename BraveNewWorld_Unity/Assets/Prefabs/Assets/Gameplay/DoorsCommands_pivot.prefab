@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 65330540971062462}
   - component: {fileID: 114190179041265950}
   - component: {fileID: 114255505386987170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD3_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 65094168413660686}
   - component: {fileID: 114533841376909500}
   - component: {fileID: 114509465759311212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD6_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 65450262682142980}
   - component: {fileID: 114470259739826694}
   - component: {fileID: 114218814297151114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD7_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 114497773153163414}
   - component: {fileID: 65155302601494726}
   - component: {fileID: 114926506775529566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DOOR4_low
   m_TagString: keyBtn
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 114059326699117078}
   - component: {fileID: 65186794349962198}
   - component: {fileID: 114979207237057848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DOOR1_low
   m_TagString: keyBtn
   m_Icon: {fileID: 0}
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 114166221094275058}
   - component: {fileID: 65954126235121712}
   - component: {fileID: 114143739554995742}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DOOR2_low
   m_TagString: keyBtn
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 65692600683437254}
   - component: {fileID: 114174422733461506}
   - component: {fileID: 114673312989343776}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PADCONFIRM_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 65231370722763208}
   - component: {fileID: 114528072243479524}
   - component: {fileID: 114615094840100998}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD4_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 65833969107996758}
   - component: {fileID: 114120938408735156}
   - component: {fileID: 114694238603813994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD5_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 64625880452528184}
   - component: {fileID: 114684303370501612}
   - component: {fileID: 114536754221491322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TopDrawer_left
   m_TagString: drawer
   m_Icon: {fileID: 0}
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 65607726324818770}
   - component: {fileID: 114187903045919058}
   - component: {fileID: 114112723735031668}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD8_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 114517745546031658}
   - component: {fileID: 65253083826895098}
   - component: {fileID: 114342463835705566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DOOR7_low
   m_TagString: keyBtn
   m_Icon: {fileID: 0}
@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 114467494021645580}
   - component: {fileID: 65204981134863098}
   - component: {fileID: 114095422424418320}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: COMFIRMDOOR_low
   m_TagString: keyBtn
   m_Icon: {fileID: 0}
@@ -732,7 +732,7 @@ GameObject:
   - component: {fileID: 65837512331704426}
   - component: {fileID: 114824100591247706}
   - component: {fileID: 114745590554837230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RESET_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -752,7 +752,7 @@ GameObject:
   - component: {fileID: 65543039110975188}
   - component: {fileID: 114067048138487952}
   - component: {fileID: 114820702972622476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD2_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -772,7 +772,7 @@ GameObject:
   - component: {fileID: 65660958039903816}
   - component: {fileID: 114664081542211030}
   - component: {fileID: 114701284207080780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD1_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -889,7 +889,7 @@ GameObject:
   - component: {fileID: 65881757569871310}
   - component: {fileID: 114892505200058650}
   - component: {fileID: 114319568320325872}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD0_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -941,7 +941,7 @@ GameObject:
   - component: {fileID: 65228620419737878}
   - component: {fileID: 114829639450599808}
   - component: {fileID: 114674365604042626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD9_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -1141,7 +1141,7 @@ GameObject:
   - component: {fileID: 64062911459380230}
   - component: {fileID: 114972070182896724}
   - component: {fileID: 114833502782247794}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TopDrawer_right
   m_TagString: drawer
   m_Icon: {fileID: 0}
@@ -1177,7 +1177,7 @@ GameObject:
   - component: {fileID: 114873282285851800}
   - component: {fileID: 65701177544772330}
   - component: {fileID: 114989971541185968}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DOOR6_low
   m_TagString: keyBtn
   m_Icon: {fileID: 0}
@@ -1214,7 +1214,7 @@ GameObject:
   - component: {fileID: 114916133276079452}
   - component: {fileID: 65258578438343098}
   - component: {fileID: 114664601933891850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DOOR5_low
   m_TagString: keyBtn
   m_Icon: {fileID: 0}
@@ -1284,7 +1284,7 @@ GameObject:
   - component: {fileID: 114892482235627274}
   - component: {fileID: 65658047356266202}
   - component: {fileID: 114663366972521440}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DOOR3_low
   m_TagString: keyBtn
   m_Icon: {fileID: 0}
@@ -1321,7 +1321,7 @@ GameObject:
   - component: {fileID: 64293089919240160}
   - component: {fileID: 114950297406756872}
   - component: {fileID: 114051418086438852}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BotomDrawer_left
   m_TagString: drawer
   m_Icon: {fileID: 0}
@@ -1401,7 +1401,7 @@ GameObject:
   - component: {fileID: 114736179530648682}
   - component: {fileID: 114997991288109892}
   - component: {fileID: 64207213565375424}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lever
   m_TagString: lever
   m_Icon: {fileID: 0}
@@ -1473,7 +1473,7 @@ GameObject:
   - component: {fileID: 64888335093355390}
   - component: {fileID: 114893246983949824}
   - component: {fileID: 114859246454031524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BottomDrawer_right
   m_TagString: drawer
   m_Icon: {fileID: 0}

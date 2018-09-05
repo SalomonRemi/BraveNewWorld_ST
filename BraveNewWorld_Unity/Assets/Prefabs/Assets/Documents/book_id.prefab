@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114899843145502086}
   - component: {fileID: 65661851880957744}
   - component: {fileID: 114507228267548480}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: book_id
   m_TagString: manual
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1166864297513988}
   m_LocalRotation: {x: 0.68301266, y: -0.6830126, z: -0.18301304, w: 0.18301307}
-  m_LocalPosition: {x: 51.581, y: 0.068, z: 65.771}
+  m_LocalPosition: {x: 0.28100204, y: 1.068, z: 6.9710045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

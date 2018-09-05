@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65940903844147072}
   - component: {fileID: 114753498544689514}
   - component: {fileID: 114976538926926538}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: doc_fannyLetter
   m_TagString: document
   m_Icon: {fileID: 0}
@@ -36,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1174306634263992}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.014146649, y: 0.014146647, z: 0.0075232266}
+  m_LocalRotation: {x: 0.08919219, y: -0.7014601, z: 0.70145786, w: 0.08919244}
+  m_LocalPosition: {x: -4.037, y: 1.066, z: -1.913}
+  m_LocalScale: {x: 0.014146649, y: 0.014146677, z: 0.0075232415}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 165.507}
 --- !u!65 &65940903844147072
 BoxCollider:
   m_ObjectHideFlags: 1

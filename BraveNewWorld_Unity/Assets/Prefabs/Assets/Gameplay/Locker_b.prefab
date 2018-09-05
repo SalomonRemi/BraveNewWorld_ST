@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 64307794483542670}
   - component: {fileID: 114123268674437746}
   - component: {fileID: 114712846990893752}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drawer_locker (2)
   m_TagString: drawer
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 64641555142028954}
   - component: {fileID: 114644135933111456}
   - component: {fileID: 114117373938563258}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drawer_locker (4)
   m_TagString: drawer
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 64941610458960102}
   - component: {fileID: 114193030336843434}
   - component: {fileID: 114492881340182418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drawer_locker (3)
   m_TagString: drawer
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 64941572177636656}
   - component: {fileID: 114726451255507384}
   - component: {fileID: 114970865297871726}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drawer_locker (1)
   m_TagString: drawer
   m_Icon: {fileID: 0}

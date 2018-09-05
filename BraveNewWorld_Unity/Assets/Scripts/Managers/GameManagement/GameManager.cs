@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour {
 
 	void Update ()
     {
-		if ((Input.GetKeyDown (KeyCode.Escape) || quitPause) && !documentOpen && !manualVisible)
+		if ((Input.GetKeyDown (KeyCode.Escape) || quitPause))//&& !documentOpen && !manualVisible
         {
 			if (isPaused) // Si le jeu est en pause, je reprend
             {
@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour {
 					player.GetComponent<FPSController> ().enabled = false;
 					manualUi.SetActive (true);
 
-					if ((Input.GetKeyDown (KeyCode.Escape) || Input.GetButtonDown("Fire2") || closeDocs) && !manualUi.GetComponent<AutoFlip> ().isFlipping)
+					if ((Input.GetButtonDown("Fire2") || closeDocs) && !manualUi.GetComponent<AutoFlip> ().isFlipping)
                     {
 						manualVisible = false;
 						closeDocs = false;
@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour {
             {
 				player.GetComponent<FPSController>().enabled = false;
 
-				if (Input.GetKeyDown (KeyCode.Escape) || Input.GetButtonDown("Fire2") || closeDocs) // FERMER LE DOC
+				if (Input.GetButtonDown("Fire2") || closeDocs) // FERMER LE DOC
                 {
 					documentOpen = false;
 					closeDocs = false;

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 64740466483500762}
   - component: {fileID: 114590139824731840}
   - component: {fileID: 114146607583157718}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drawer_locker_up
   m_TagString: drawer
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 64140017300903590}
   - component: {fileID: 114629622012064256}
   - component: {fileID: 114628563812529480}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drawer_locker_dawn
   m_TagString: drawer
   m_Icon: {fileID: 0}
