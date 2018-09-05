@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65171567061591782}
   - component: {fileID: 114389278806484984}
   - component: {fileID: 114081426979834122}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: doc_suicide
   m_TagString: document
   m_Icon: {fileID: 0}
@@ -36,13 +36,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1197753159583976}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.048025787, y: 0.048025798, z: 0.025540255}
+  m_LocalRotation: {x: 0.70710677, y: -0, z: -0.0000000015205046, w: 0.7071068}
+  m_LocalPosition: {x: 2.4329987, y: 0.019000053, z: 7.0110016}
+  m_LocalScale: {x: 0.048025794, y: 0.048025865, z: 0.025540285}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 0}
 --- !u!65 &65171567061591782
 BoxCollider:
   m_ObjectHideFlags: 1

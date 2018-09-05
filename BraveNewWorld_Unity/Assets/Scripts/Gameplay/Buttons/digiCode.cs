@@ -159,7 +159,7 @@ public class digiCode : MonoBehaviour {
 
 			return true;
 		}
-        else if (isLastDigicode && keycode == 6444)
+        else if (isLastDigicode && keycode == 6544)
         {
             GameManager.instance.flashKeypad = true;
 
