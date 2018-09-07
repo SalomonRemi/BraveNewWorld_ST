@@ -156,17 +156,17 @@ public class MissionManager : MonoBehaviour {
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.M))
-        //{
-        //    StopAllCoroutines();
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            StopAllCoroutines();
 
-        //    AudioManager.instance.StopMusic();
+            AudioManager.instance.StopMusic();
 
-        //    //StartCoroutine(startMission());
-        //    StartCoroutine(mission4());
+            //StartCoroutine(startMission());
+            StartCoroutine(mission3());
 
-        //    player.transform.position = debugTransform.position;
-        //}
+            player.transform.position = debugTransform.position;
+        }
 
         if (doScrolling)
         {
@@ -179,7 +179,7 @@ public class MissionManager : MonoBehaviour {
             }
         }
 
-        if(isInVents)
+        if (isInVents)
         {
             StopAllCoroutines();
             doorNums.Clear();
@@ -306,16 +306,16 @@ public class MissionManager : MonoBehaviour {
         yield return new WaitForSeconds(.5f);
 
 		//intro4
-		Dialogue dialogue4 = new Dialogue();
-		dialogue4.sentences.Add("Suite à l’incident de ce matin, les portes restent fermées durant les heures de travail.");
-		dialogue4.sentences.Add("Commencez par vous placer devant le panneau de commande.");
+		//Dialogue dialogue4 = new Dialogue();
+		//dialogue4.sentences.Add("Suite à l’incident de ce matin, les portes restent fermées durant les heures de travail.");
+		//dialogue4.sentences.Add("Commencez par vous placer devant le panneau de commande.");
 
-        FindObjectOfType<DialogSystem>().StartDialogue(dialogue4);
+  //      FindObjectOfType<DialogSystem>().StartDialogue(dialogue4);
 
-        AudioManager.instance.StopMusic();
-        AudioManager.instance.PlayMusic("introDialog04");
+  //      AudioManager.instance.StopMusic();
+  //      AudioManager.instance.PlayMusic("introDialog04");
 
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(1f); //si on remet dialogue il faut augmenter
 
 		while (goToNextStep)
 		{
@@ -408,7 +408,7 @@ public class MissionManager : MonoBehaviour {
 		doorAmmount = 7;
 
         randomTalkRoutine = StartCoroutine(randomTalk(puzzleNum, puzzle2RandTalkTime));
-        giveHintRoutine = StartCoroutine(GiveHint(puzzleNum, puzzle2RandTalkTime));
+        giveHintRoutine = StartCoroutine(GiveHint(puzzleNum, puzzle4HintTalkTime));
 
         Dialogue dialogue = new Dialogue ();
 		//dialogue.sentences.Add ("Hum, Oscar reste introuvable, nos recherches nous ont permis de conclure qu'il était en liaison avec un individu particulier. Restez sur vos gardes.");

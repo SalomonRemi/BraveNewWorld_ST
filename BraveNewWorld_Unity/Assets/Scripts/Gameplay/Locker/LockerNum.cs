@@ -17,6 +17,7 @@ public class LockerNum : MonoBehaviour {
 
     private void Start()
     {
+        actualNumber = Random.Range(1, 6);
         displayText = gameObject.GetComponentInChildren<TextMeshPro>();
     }
 
