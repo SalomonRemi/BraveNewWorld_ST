@@ -66,7 +66,7 @@ public class Locker : MonoBehaviour {
         {
             codeOk = true;
 
-            if (!feedbackDone) StartCoroutine(Feedback(secondObjectAnim, "powerButton", false));
+            if (!feedbackDone) StartCoroutine(Feedback(secondObjectAnim, "lockerGood", false));
 
             findCode2 = true;
         }

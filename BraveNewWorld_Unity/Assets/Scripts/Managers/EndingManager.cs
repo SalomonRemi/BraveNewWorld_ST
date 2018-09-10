@@ -43,14 +43,7 @@ public class EndingManager : MonoBehaviour {
         hiddenRoomDoorAnim.SetBool("kreep", true);
         AudioManager.instance.PlaySound("finalDoorOpen");
 
-        while (!goToNextStep)
-        {
-            if (endDialogTrigger)
-            {
-                goToNextStep = true;
-            }
-            yield return null;
-        }
+        yield return new WaitForSeconds(3f);
 
         Dialogue dialogue1 = new Dialogue();
         dialogue1.sentences.Add("À tous les employés du CICL, je vous prie de garder votre calme. Vous avez sûrement déjà tous entendu mon nom, Kreep.");
@@ -63,11 +56,11 @@ public class EndingManager : MonoBehaviour {
 
         //AudioManager.instance.PlayMusic("outroKreepDialog01");
 
-        while (goToNextStep)
+        while (!goToNextStep)
         {
             if (liftDialogTrigger)
             {
-                goToNextStep = false;
+                goToNextStep = true;
             }
             yield return null;
         }
