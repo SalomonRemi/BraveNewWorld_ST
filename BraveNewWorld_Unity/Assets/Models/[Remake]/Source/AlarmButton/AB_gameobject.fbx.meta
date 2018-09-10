@@ -1,0 +1,207 @@
+fileFormatVersion: 2
+guid: c907859bdd7975c4994772c0b68532dd
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: AlarmButton_low
+    100004: AlarmButton_low4
+    100006: AlarmButton_low4_BoxAlpha_low
+    100008: AlarmButton_low4_BoxPlastic_low
+    100010: BoxAlpha_low
+    100012: BoxPlastic_low
+    100014: MetalBtm_low
+    100016: MetalTop_low
+    100018: polySurface9016
+    100020: polySurface9017
+    100022: polySurface9017 1
+    100024: polySurface9018
+    100026: polySurface9019
+    100028: polySurface9021
+    100030: polySurface9021 1
+    100032: polySurface9022
+    100034: polySurface9022 1
+    100036: polySurface9023
+    100038: polySurface9024
+    100040: polySurface9025
+    100042: polySurface9026
+    100044: polySurface9028
+    100046: polySurface9029
+    100048: polySurface9030
+    100050: polySurface9030 1
+    100052: polySurface9031
+    100054: polySurface9032
+    100056: transform1735
+    100058: transform1736
+    100060: transform1737
+    100062: transform1738
+    100064: transform1739
+    100066: transform1740
+    100068: transform1741
+    100070: transform1742
+    100072: transform1743
+    100074: transform1744
+    100076: transform1745
+    100078: transform1746
+    100080: transform1747
+    100082: transform1748
+    100084: transform1749
+    100086: transform1750
+    100088: transform1751
+    100090: transform1752
+    100092: transform1753
+    100094: transform1754
+    100096: transform1755
+    100098: transform1756
+    100100: transform1757
+    100102: transform1758
+    100104: transform1759
+    100106: VisLeft_low
+    100108: VisRight_low
+    400000: //RootNode
+    400002: AlarmButton_low
+    400004: AlarmButton_low4
+    400006: AlarmButton_low4_BoxAlpha_low
+    400008: AlarmButton_low4_BoxPlastic_low
+    400010: BoxAlpha_low
+    400012: BoxPlastic_low
+    400014: MetalBtm_low
+    400016: MetalTop_low
+    400018: polySurface9016
+    400020: polySurface9017
+    400022: polySurface9017 1
+    400024: polySurface9018
+    400026: polySurface9019
+    400028: polySurface9021
+    400030: polySurface9021 1
+    400032: polySurface9022
+    400034: polySurface9022 1
+    400036: polySurface9023
+    400038: polySurface9024
+    400040: polySurface9025
+    400042: polySurface9026
+    400044: polySurface9028
+    400046: polySurface9029
+    400048: polySurface9030
+    400050: polySurface9030 1
+    400052: polySurface9031
+    400054: polySurface9032
+    400056: transform1735
+    400058: transform1736
+    400060: transform1737
+    400062: transform1738
+    400064: transform1739
+    400066: transform1740
+    400068: transform1741
+    400070: transform1742
+    400072: transform1743
+    400074: transform1744
+    400076: transform1745
+    400078: transform1746
+    400080: transform1747
+    400082: transform1748
+    400084: transform1749
+    400086: transform1750
+    400088: transform1751
+    400090: transform1752
+    400092: transform1753
+    400094: transform1754
+    400096: transform1755
+    400098: transform1756
+    400100: transform1757
+    400102: transform1758
+    400104: transform1759
+    400106: VisLeft_low
+    400108: VisRight_low
+    2100000: pasted__pasted__UVCheckerMap01_1024_1Material
+    2100002: lambert1
+    2300000: AlarmButton_low
+    2300002: polySurface9022
+    2300004: polySurface9030
+    3300000: AlarmButton_low
+    3300002: polySurface9022
+    3300004: polySurface9030
+    4300000: AlarmButton_low
+    4300002: polySurface9022
+    4300004: polySurface9030
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
