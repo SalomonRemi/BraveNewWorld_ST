@@ -13,12 +13,12 @@ public class Alarm : MonoBehaviour
 
     public GameObject alarmSound;
 
-    private Collider col;
+    //private MeshCollider col;
 
     public void TurnOnAlarm() //CALL ON ELECTRIC PANNEL GOOD
     {
         alarmAnim.SetBool("turnOn", true);
-        col = GetComponent<Collider>();
+        //col = GetComponent<MeshCollider>();
     }
 
     public void DoAlarm() //CALL ON BUTTON
@@ -26,7 +26,7 @@ public class Alarm : MonoBehaviour
         alarmAnim.SetBool("doAlarm", true);
         AudioManager.instance.PlaySound("lockerButton");
 
-        col.enabled = false;
+        //col.enabled = false;
 
         megaphone.TurnOffMegaphone();
         radio.TurnOffRadio();
