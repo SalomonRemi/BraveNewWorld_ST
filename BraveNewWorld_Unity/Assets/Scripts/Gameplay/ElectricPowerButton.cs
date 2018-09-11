@@ -6,6 +6,7 @@ using DigitalRuby.SoundManagerNamespace;
 public class ElectricPowerButton : MonoBehaviour {
 
     public List<GameObject> objectList;
+    public Animator buttonHolderAnim;
 
     private bool isActivated;
     private Collider col;
@@ -20,6 +21,7 @@ public class ElectricPowerButton : MonoBehaviour {
         if(!isActivated)
         {
             AudioManager.instance.PlaySound("powerButton");
+            buttonHolderAnim.SetBool("SetOn", true);
 
             for (int i = 0; i < objectList.Count; i++)
             {
