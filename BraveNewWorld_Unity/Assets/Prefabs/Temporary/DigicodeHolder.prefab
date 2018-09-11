@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65825630457706736}
   - component: {fileID: 114624238451951106}
   - component: {fileID: 114013189459762646}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD3_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   - component: {fileID: 65018458723585554}
   - component: {fileID: 114442811924043544}
   - component: {fileID: 114697778017337616}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD5_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 65013257366731432}
   - component: {fileID: 114887353179864352}
   - component: {fileID: 114390168015687932}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD4_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 65092707003047856}
   - component: {fileID: 114754031124196044}
   - component: {fileID: 114663803863246690}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PADCONFIRM_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 65875083220609492}
   - component: {fileID: 114546822746544074}
   - component: {fileID: 114265052185191686}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD6_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 65515806569766780}
   - component: {fileID: 114638918408758490}
   - component: {fileID: 114009914203127260}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD1_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 65576713596252038}
   - component: {fileID: 114331080431648946}
   - component: {fileID: 114595339230554072}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RESET_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 65607756520307304}
   - component: {fileID: 114715432989383230}
   - component: {fileID: 114323425521330306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD7_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ GameObject:
   - component: {fileID: 65414384300450898}
   - component: {fileID: 114735640334873638}
   - component: {fileID: 114651586124521304}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD9_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 65121776074541912}
   - component: {fileID: 114643054314255930}
   - component: {fileID: 114750892604616800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD2_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -483,7 +483,7 @@ GameObject:
   - component: {fileID: 65991032293268916}
   - component: {fileID: 114911281754251148}
   - component: {fileID: 114898758631136310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD8_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 65468708260473028}
   - component: {fileID: 114046960740445714}
   - component: {fileID: 114616332140304430}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PAD0_low
   m_TagString: digiBtn
   m_Icon: {fileID: 0}
@@ -2213,9 +2213,9 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.5764706, g: 0.75686276, b: 0.6784314, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 0.7
   m_Range: 12.297428
-  m_SpotAngle: 48.452343
+  m_SpotAngle: 64.364296
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
