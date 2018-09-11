@@ -10,10 +10,12 @@ public class Megaphone : MonoBehaviour
     public GameObject node;
 
     public Animator megaphoneAnim;
+    public Animator speakerAnim;
+    public Animator buttonAnim;
 
     public float cooldownTime;
 
-    private MeshRenderer nodeMr;
+    //private MeshRenderer nodeMr;
     private Collider col;
 
     private int angryCounter;
@@ -23,14 +25,14 @@ public class Megaphone : MonoBehaviour
 
     private void Start()
     {
-        nodeMr = node.GetComponent<MeshRenderer>();
+        //nodeMr = node.GetComponent<MeshRenderer>();
         col = GetComponent<Collider>();
     }
 
 
     public void TurnOnMegaphone() //CALL ON ELECTRIC PANNEL GOOD
     {
-        nodeMr.material.color = Color.red;
+        //nodeMr.material.color = Color.red;
         isActivated = false;
         megaphoneAnim.SetBool("turnOn", true);
         col.enabled = true;
@@ -38,7 +40,7 @@ public class Megaphone : MonoBehaviour
 
     public void TurnOffMegaphone() //CALL ON ALARM
     {
-        nodeMr.material.color = Color.red;
+        //nodeMr.material.color = Color.red;
         isActivated = false;
         col.enabled = false;
     }
@@ -47,18 +49,21 @@ public class Megaphone : MonoBehaviour
     public void StartMegaphone() //CALL ON BUTTON PRESS ON
     {
         AudioManager.instance.PlaySound("lockerButton");
-        nodeMr.material.color = Color.green;
+        //nodeMr.material.color = Color.green;
         isActivated = true;
 
         StartCoroutine(MegaMessage());
         StartCoroutine(ClickCooldown());
+
+        speakerAnim.SetBool("SetOn", true);
+        buttonAnim.SetBool("SetOn", true);
     }
 
     public void CutMegaphone() //CALL ON BUTTON PRESS OFF
     {
         StopAllCoroutines();
 
-        nodeMr.material.color = Color.red;
+        //nodeMr.material.color = Color.red;
         isActivated = false;
         angryCounter++;
 
@@ -68,6 +73,8 @@ public class Megaphone : MonoBehaviour
         FindObjectOfType<DialogSystem>().EndDialogue(); //BUG HERE
 
         StartCoroutine(ClickCooldown());
+        speakerAnim.SetBool("SetOn", false);
+        buttonAnim.SetBool("SetOn", false);
     }
 
     IEnumerator MegaMessage()
@@ -88,10 +95,6 @@ public class Megaphone : MonoBehaviour
         {
             dialogue1.sentences.Add("Ca n’arrête pas de couper, je vais commencer à croire que vous le faites exprès ! Transmettez-nous l’identifiant de Kreep ou nous viendrons le faire à votre place.");
         }
-        //else if (angryCounter == 3)
-        //{
-        //    dialogue1.sentences.Add("This is the last fucking time... I'am crazy you bloody kreep I want him to die !");
-        //}
         FindObjectOfType<DialogSystem>().StartDialogue(dialogue1);
 
         //SON DIALOGUE
