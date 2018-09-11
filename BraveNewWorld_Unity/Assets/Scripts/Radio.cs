@@ -6,13 +6,15 @@ using DigitalRuby.SoundManagerNamespace;
 
 public class Radio : MonoBehaviour {
    
-    public GameObject node;
+    //public GameObject node;
 
     public Animator radioAnim;
+    public Animator tapeAnim;
+    private Animator buttonAnim;
 
     public float cooldownTime;
 
-    private MeshRenderer nodeMr;
+    //private MeshRenderer nodeMr;
     private Collider col;
 
     [HideInInspector] public bool isActivated;
@@ -20,14 +22,16 @@ public class Radio : MonoBehaviour {
 
     private void Start()
     {
-        nodeMr = node.GetComponent<MeshRenderer>();
+        //nodeMr = node.GetComponent<MeshRenderer>();
         col = GetComponent<Collider>();
+        buttonAnim = GetComponent<Animator>();
+        tapeAnim.speed = 0f;
     }
 
 
     public void TurnOnRadio() //CALL ON ELECTRIC PANNEL GOOD
     {
-        nodeMr.material.color = Color.red;
+        //nodeMr.material.color = Color.red;
         isActivated = false;
         radioAnim.SetBool("turnOn", true);
         col.enabled = true;
@@ -35,9 +39,10 @@ public class Radio : MonoBehaviour {
 
     public void TurnOffRadio() //CALL ON ALARM
     {
-        nodeMr.material.color = Color.red;
+        //nodeMr.material.color = Color.red;
         isActivated = false;
         col.enabled = false;
+        tapeAnim.speed = 0f;
     }
 
 
@@ -46,15 +51,17 @@ public class Radio : MonoBehaviour {
         //AudioManager.instance.PlaySound("radioOn");
         AudioManager.instance.PlaySound("lockerButton");
 
-        nodeMr.material.color = Color.green;
+        //nodeMr.material.color = Color.green;
+        buttonAnim.SetBool("SetOn", true);
         isActivated = true;
 
         StartCoroutine(RadioMessage());
+        tapeAnim.speed = 1f;
     }
 
     public void CutRadio() //CALL ON BUTTON PRESS OFF
     {
-        nodeMr.material.color = Color.red;
+        //nodeMr.material.color = Color.red;
         isActivated = false;
 
         //AudioManager.instance.PlaySound("radioOff");
@@ -62,7 +69,9 @@ public class Radio : MonoBehaviour {
         AudioManager.instance.StopMusic();
         FindObjectOfType<DialogSystem>().EndDialogue(); //BUG HERE
 
+        buttonAnim.SetBool("SetOn", false);
         StopAllCoroutines();
+        tapeAnim.speed = 0f;
     }
 
     IEnumerator RadioMessage()
