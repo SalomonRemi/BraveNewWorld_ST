@@ -42,8 +42,6 @@ public class MissionManager : MonoBehaviour {
 
     [Header("Missions Settings")]
 
-    //[Range(60f, 360f)] public float timeBeforeRandTalk;
-    //[Range(60f,360f)] public float timeBeforeHint;
     public Animator levier;
     public Animator commandPanel;
     public Animator bedroomDoor;
@@ -159,12 +157,8 @@ public class MissionManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.M))
         {
             StopAllCoroutines();
-
             AudioManager.instance.StopMusic();
-
-            //StartCoroutine(startMission());
-            StartCoroutine(mission3());
-
+            StartCoroutine(mission8());
             player.transform.position = debugTransform.position;
         }
 
@@ -717,7 +711,7 @@ public class MissionManager : MonoBehaviour {
     {
         commandPanel.SetBool("isDigicodeAvailable", true);
 
-        puzzleNum = 5;
+        puzzleNum = 7;
         inLastPuzzle = true;
 
         GameManager.instance.flashKeypad = true;
@@ -782,7 +776,9 @@ public class MissionManager : MonoBehaviour {
 
         AudioManager.instance.PlaySound("weirdSoundsTri");
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2.5f);
+
+        levier.SetBool("isOpening", false);
 
         doorNums.Clear();
         resestMission();
@@ -794,20 +790,20 @@ public class MissionManager : MonoBehaviour {
     {
         puzzleNum = 8;
         inExePuzzle = true;
-        canStartExePuzzle = false;  
+        canStartExePuzzle = false;
 
         Dialogue dialogue = new Dialogue();
-        dialogue.sentences.Add("Parfait Wilson ! Nous lui trouverons bientôt un remplaçant. J'ai du nouveau concernant Oscar.");
-        dialogue.sentences.Add("Nous venons d'interroger le responsable de la sécurité, nous nous sommes rendu compte qu’il n’était pas en état d'exercer sa fonction ce matin.");
-        dialogue.sentences.Add("Il a négligé beaucoup de possibilité quant à la fuite d’Oscar.");
-        dialogue.sentences.Add("Nous allons devoir nous en occuper nous-mêmes ! Il y a nombre de couloirs et de conduits à vérifier.");
+        dialogue.sentences.Add("parfait wilson ! nous lui trouverons bientôt un remplaçant. j'ai du nouveau concernant oscar.");
+        dialogue.sentences.Add("nous venons d'interroger le responsable de la sécurité, nous nous sommes rendu compte qu’il n’était pas en état d'exercer sa fonction ce matin.");
+        dialogue.sentences.Add("il a négligé beaucoup de possibilité quant à la fuite d’oscar.");
+        dialogue.sentences.Add("nous allons devoir nous en occuper nous-mêmes ! il y a nombre de couloirs et de conduits à vérifier.");
 
         FindObjectOfType<DialogSystem>().StartDialogue(dialogue);
         AudioManager.instance.StopMusic();
         AudioManager.instance.PlayMusic("puzzle8_1");
 
         StartCoroutine(DisplayOrder(10f));
-        orderText = "Écoutez les ordres du directeur.";
+        orderText = "écoutez les ordres du directeur.";
 
         while (!canStartExePuzzle)
         {
@@ -821,14 +817,14 @@ public class MissionManager : MonoBehaviour {
             yield return null;
         }
 
-        keypad.ComfirmInput(); // APPELLE COMFIRMINPUT POUR FEEDBACK FLASH ET SON
+        keypad.ComfirmInput(); // appelle comfirminput pour feedback flash et son
 
-        yield return new WaitForSeconds(1f); 
+        yield return new WaitForSeconds(1f);
 
         isInLastPuzzle = true;
 
         Dialogue dialogue2 = new Dialogue();
-        dialogue2.sentences.Add("Tiens sacré Oscar c’est donc là que tu es parti !");
+        dialogue2.sentences.Add("tiens sacré oscar c’est donc là que tu es parti !");
         FindObjectOfType<DialogSystem>().StartDialogue(dialogue2);
 
         AudioManager.instance.StopMusic();
@@ -1026,7 +1022,7 @@ public class MissionManager : MonoBehaviour {
             AudioManager.instance.StopMusic();
             AudioManager.instance.PlayMusic("hint5");
         }
-        else if (puzzleID == 7)
+        else if (puzzleID == 7 && !finishedStep01)
         {
             Dialogue dialogue5 = new Dialogue();
             dialogue5.sentences.Add("Je vois, un vol de badge a eu lieu en salle de conditionnement, vous n’avez plus qu’à trouver qui s’y trouvait à ce moment-là.");
@@ -1088,7 +1084,7 @@ public class MissionManager : MonoBehaviour {
             AudioManager.instance.StopMusic();
             AudioManager.instance.PlayMusic("anecdote4");
         }
-        else if (missionLevel == 7)
+        else if (missionLevel == 7 && !finishedStep01)
         {
             Dialogue dialogue6 = new Dialogue();
             dialogue6.sentences.Add("Alors Wilson, le métier est bien plus complexe qu’il n’en a l’air pas vrai ?");

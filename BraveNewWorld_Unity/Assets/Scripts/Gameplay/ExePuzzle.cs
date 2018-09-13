@@ -723,7 +723,12 @@ public class ExePuzzle : MonoBehaviour {
             AudioManager.instance.PlayMusic("hint8");
         }
 
-        yield return new WaitForSeconds(10f);
+        if (actualPuzzle == 3)
+            yield return new WaitForSeconds(9f);
+        else if (actualPuzzle == 6)
+            yield return new WaitForSeconds(14f);
+        else if (actualPuzzle == 8)
+            yield return new WaitForSeconds(10f);
 
         StartPuzzle(actualPuzzle);
     }

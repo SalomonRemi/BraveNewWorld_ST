@@ -9,6 +9,9 @@ public class EndingManager : MonoBehaviour {
 
     public Animator hiddenRoomDoorAnim;
 
+    public Radio radio;
+    public Megaphone mega;
+
     private bool goToNextStep;
     [HideInInspector] public bool endDialogTrigger;
     [HideInInspector] public bool liftDialogTrigger;
@@ -30,11 +33,21 @@ public class EndingManager : MonoBehaviour {
     public void StartKreepEnding()
     {
         StartCoroutine(KreepEnding());
+
+        radio.CutRadio();
+        radio.TurnOffRadio();
+        mega.CutMegaphone();
+        mega.TurnOffMegaphone();
     }
 
     public void StartCorporateEnding()
     {
         StartCoroutine(CorpoEnding());
+
+        radio.CutRadio();
+        radio.TurnOffRadio();
+        mega.CutMegaphone();
+        mega.TurnOffMegaphone();
     }
 
 
