@@ -58,8 +58,8 @@ public class keyBtn : MonoBehaviour {
         } 
 		else if(validate && parent.keyPressed.Count == 0) AudioManager.instance.PlaySound("buttonFalse");
 
-		if (parent.enabledAmmount < MissionManager.instance.doorAmmount && !clicked && !validate)// ACTIVER UN BOUTON
-		{ 
+		if (!clicked && !validate)// ACTIVER UN BOUTON // parent.enabledAmmount < MissionManager.instance.doorAmmount && 
+        { 
 			parent.keyPressed.Add(buttonIntValue);
 			parent.enabledAmmount++;
 			clicked = true;

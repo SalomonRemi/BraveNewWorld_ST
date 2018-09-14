@@ -29,7 +29,7 @@ public class ExePuzzle : MonoBehaviour {
     {
         if (inSearch)
         {
-            searchCount += Time.unscaledDeltaTime;
+            searchCount += Time.deltaTime; // A VÉRIFIER
 
             if (searchCount > maxTime)
             {

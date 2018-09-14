@@ -158,7 +158,7 @@ public class MissionManager : MonoBehaviour {
         {
             StopAllCoroutines();
             AudioManager.instance.StopMusic();
-            StartCoroutine(mission8());
+            StartCoroutine(mission6());
             player.transform.position = debugTransform.position;
         }
 
@@ -405,7 +405,6 @@ public class MissionManager : MonoBehaviour {
         giveHintRoutine = StartCoroutine(GiveHint(puzzleNum, puzzle4HintTalkTime));
 
         Dialogue dialogue = new Dialogue ();
-		//dialogue.sentences.Add ("Hum, Oscar reste introuvable, nos recherches nous ont permis de conclure qu'il était en liaison avec un individu particulier. Restez sur vos gardes.");
 		dialogue.sentences.Add ("Bien ! Vous semblez apprendre vite, Wilson, continuons sur notre lancée.");
 		dialogue.sentences.Add ("Mr. Jay vient de se rendre compte que les batteries sont usées, vous rendez-vous compte ?");
 		dialogue.sentences.Add ("Localisez ce matériel défectueux, puis ouvrez l’accès, j’enverrais des employés s’en débarrasser.");
@@ -596,8 +595,9 @@ public class MissionManager : MonoBehaviour {
         yield return new WaitForSeconds(16f);
 
         commandPanel.SetBool("isDigicodeAvailable", true);
-        
-		while (!finishedStep01)
+        AudioManager.instance.PlaySound("digiOpen");
+
+        while (!finishedStep01)
         {
 			if (digiFinishPuzzle)
             {
@@ -659,7 +659,7 @@ public class MissionManager : MonoBehaviour {
     {
         puzzleNum = 6;
         inExePuzzle = true;
-        canStartExePuzzle = false; // RESET MANUEL ? 
+        //canStartExePuzzle = false; // RESET MANUEL ? 
 
         Dialogue dialogue = new Dialogue();
         dialogue.sentences.Add("Merci Wilson, merci pour Jack ! Oh mais c’est déjà l’heure du conditionnement, nous sommes en retard !");

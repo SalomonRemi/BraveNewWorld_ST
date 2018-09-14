@@ -60,7 +60,7 @@ public class Radio : MonoBehaviour {
         //AudioManager.instance.PlaySound("radioOff");
         AudioManager.instance.PlaySound("lockerButton");
         AudioManager.instance.StopMusic();
-        FindObjectOfType<DialogSystem>().EndDialogue(); //BUG HERE
+        FindObjectOfType<DialogSystem>().EndDialogue(); 
 
         buttonAnim.SetBool("SetOn", false);
         StopAllCoroutines();
