@@ -158,7 +158,7 @@ public class MissionManager : MonoBehaviour {
         {
             StopAllCoroutines();
             AudioManager.instance.StopMusic();
-            StartCoroutine(mission6());
+            StartCoroutine(startMission());
             player.transform.position = debugTransform.position;
         }
 
@@ -428,15 +428,15 @@ public class MissionManager : MonoBehaviour {
 			yield return null;
 		}
 
-		StartCoroutine (MapFeedback (1,5));
+        StopCoroutine(randomTalkRoutine);
+        StopCoroutine(giveHintRoutine);
+
+        StartCoroutine (MapFeedback (1,5));
 
 		while (!doorFeedbackState)
 		{
 			yield return null;
 		}
-
-        StopCoroutine(randomTalkRoutine);
-        StopCoroutine(giveHintRoutine);
 
         yield return new WaitForSeconds(.1f);
 
@@ -546,15 +546,15 @@ public class MissionManager : MonoBehaviour {
             yield return null;
 		}
 
-		StartCoroutine (MapFeedback (2,6));
+        StopCoroutine(randomTalkRoutine);
+        StopCoroutine(giveHintRoutine);
+
+        StartCoroutine (MapFeedback (2,6));
 
 		while (!doorFeedbackState)
 		{
 			yield return null;
 		}
-        
-        StopCoroutine(randomTalkRoutine);
-        StopCoroutine(giveHintRoutine);
 
         yield return new WaitForSeconds(.1f);
 
@@ -635,15 +635,15 @@ public class MissionManager : MonoBehaviour {
 			yield return null;
 		}
 
-		StartCoroutine (MapFeedback (4,7));
+        StopCoroutine(randomTalkRoutine);
+        StopCoroutine(giveHintRoutine);
+
+        StartCoroutine (MapFeedback (4,7));
 
 		while (!doorFeedbackState)
 		{
 			yield return null;
 		}
-
-        StopCoroutine(randomTalkRoutine);
-        StopCoroutine(giveHintRoutine);
 
         yield return new WaitForSeconds(.1f);
 
