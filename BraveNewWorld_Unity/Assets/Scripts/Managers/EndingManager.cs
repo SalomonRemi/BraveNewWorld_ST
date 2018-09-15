@@ -7,6 +7,8 @@ public class EndingManager : MonoBehaviour {
 
     public static EndingManager instance = null;
 
+    public List<Light> lightList;
+
     public Animator hiddenRoomDoorAnim;
 
     public Radio radio;
@@ -38,6 +40,8 @@ public class EndingManager : MonoBehaviour {
         radio.TurnOffRadio();
         mega.CutMegaphone();
         mega.TurnOffMegaphone();
+
+        //TurnLightRed();
     }
 
     public void StartCorporateEnding()
@@ -114,5 +118,13 @@ public class EndingManager : MonoBehaviour {
         //AudioManager.instance.PlayMusic("outroCorpoDialog01");
 
         yield return null;
+    }
+
+    public void TurnLightRed()
+    {
+        for (int i = 0; i < lightList.Count; i++)
+        {
+            lightList[i].color = new Color(200, 115, 115);
+        }
     }
 }
