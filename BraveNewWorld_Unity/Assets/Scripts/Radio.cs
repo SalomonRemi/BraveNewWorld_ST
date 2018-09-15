@@ -8,6 +8,8 @@ public class Radio : MonoBehaviour {
    
     public Animator radioAnim;
     public Animator tapeAnim;
+    public GameObject radioSound;
+
     private Animator buttonAnim;
 
     public float cooldownTime;
@@ -51,6 +53,8 @@ public class Radio : MonoBehaviour {
 
         StartCoroutine(RadioMessage());
         tapeAnim.speed = 1f;
+
+        //radioSound.SetActive(true);
     }
 
     public void CutRadio() //CALL ON BUTTON PRESS OFF
@@ -65,6 +69,7 @@ public class Radio : MonoBehaviour {
         buttonAnim.SetBool("SetOn", false);
         StopAllCoroutines();
         tapeAnim.speed = 0f;
+        //radioSound.SetActive(false);
     }
 
     IEnumerator RadioMessage()
