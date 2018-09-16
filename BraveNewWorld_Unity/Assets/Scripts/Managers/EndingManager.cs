@@ -6,13 +6,12 @@ using DigitalRuby.SoundManagerNamespace;
 public class EndingManager : MonoBehaviour {
 
     public static EndingManager instance = null;
-
-    public List<Light> lightList;
-
     public Animator hiddenRoomDoorAnim;
-
     public Radio radio;
     public Megaphone mega;
+
+    public GameObject redLightHolder;
+    public GameObject whiteLightHolder;
 
     private bool goToNextStep;
     [HideInInspector] public bool endDialogTrigger;
@@ -41,7 +40,7 @@ public class EndingManager : MonoBehaviour {
         mega.CutMegaphone();
         mega.TurnOffMegaphone();
 
-        //TurnLightRed();
+        TurnLightRed();
     }
 
     public void StartCorporateEnding()
@@ -52,6 +51,8 @@ public class EndingManager : MonoBehaviour {
         radio.TurnOffRadio();
         mega.CutMegaphone();
         mega.TurnOffMegaphone();
+
+        TurnLightWhite();
     }
 
 
@@ -122,9 +123,11 @@ public class EndingManager : MonoBehaviour {
 
     public void TurnLightRed()
     {
-        for (int i = 0; i < lightList.Count; i++)
-        {
-            lightList[i].color = new Color(200, 115, 115);
-        }
+        redLightHolder.SetActive(true);
+    }
+
+    public void TurnLightWhite()
+    {
+        whiteLightHolder.SetActive(true);
     }
 }
