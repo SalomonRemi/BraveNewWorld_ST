@@ -310,31 +310,4 @@ public class PlayerInteract : MonoBehaviour {
             interactionObjectText.gameObject.SetActive(false);
         }
     }
-
-
-
-	//IEnumerator sitDown()
- //   {
-	//	if (!isSitting)
- //       {
-	//		isSitting = true;
- //           yield return new WaitForSeconds(0.1f);
- //           AudioManager.instance.PlaySound("sitDown");
- //           prevSitpos = transform.position;
-	//		for (float i = 0; i < 10f; i += Time.deltaTime)
- //           {
-	//			//transform.parent.transform.position = Vector3.Lerp (transform.position, chair.transform.position, i / Time.deltaTime);
-	//		}
-	//	}
- //       else
- //       {
-	//		isSitting = false;
- //           AudioManager.instance.PlaySound("standUp");
- //           for (float i = 0; i < 10f; i += Time.deltaTime)
- //           {
-	//			transform.parent.transform.position = Vector3.Lerp (transform.position, prevSitpos,  i / Time.deltaTime);
-	//		}
-	//	}
-	//	yield return null;
-	//}
 }

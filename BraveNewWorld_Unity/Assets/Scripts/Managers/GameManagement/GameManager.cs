@@ -60,9 +60,12 @@ public class GameManager : MonoBehaviour {
 
 	void Update ()
     {
-		if ((Input.GetKeyDown (KeyCode.Escape) || quitPause))//&& !documentOpen && !manualVisible
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        if ((Input.GetKeyDown (KeyCode.Escape) || quitPause))//&& !documentOpen && !manualVisible
         {
-			if (isPaused) // Si le jeu est en pause, je reprend
+            if (isPaused) // Si le jeu est en pause, je reprend
             {
 				quitPause = false;
 				Time.timeScale = 1f;

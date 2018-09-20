@@ -7,6 +7,7 @@ public class EndingManager : MonoBehaviour {
 
     public static EndingManager instance = null;
     public Animator hiddenRoomDoorAnim;
+    public Animator finalLiftDoors;
     public Radio radio;
     public Megaphone mega;
 
@@ -90,6 +91,10 @@ public class EndingManager : MonoBehaviour {
 
         FindObjectOfType<DialogSystem>().StartDialogue(dialogue2);
 
+        yield return new WaitForSeconds(1f);
+
+        finalLiftDoors.SetBool("doClose", true);
+
         //AudioManager.instance.PlayMusic("outroKreepDialog02");
 
         yield return null;
@@ -114,6 +119,17 @@ public class EndingManager : MonoBehaviour {
         dialogue1.sentences.Add("Kreep et moi-même vous remercions pour votre service, vous n’avez pas idée de l’aide précieuse que vous nous avez fourni !");
         dialogue1.sentences.Add("Avancez jusqu’au bout du couloir et prenez l’ascenceur, je vous attendrai au 5ème étage nous avons à discuter.");
         dialogue1.sentences.Add("Je vous laisse je dois régler 'quelque chose', à tout à l’heure !");
+
+        while (goToNextStep)
+        {
+            if (liftDialogTrigger)
+            {
+                goToNextStep = false;
+            }
+            yield return null;
+        }
+
+        finalLiftDoors.SetBool("doClose", true);
         FindObjectOfType<DialogSystem>().StartDialogue(dialogue1);
 
         //AudioManager.instance.PlayMusic("outroCorpoDialog01");

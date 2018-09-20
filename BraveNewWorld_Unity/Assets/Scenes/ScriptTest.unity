@@ -900,7 +900,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 114757396891624722, guid: bd94bc2bbd3497d4c8cc43f6d36b2080,
     type: 2}
   m_PrefabInternal: {fileID: 3977587}
-  m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
 --- !u!1001 &843776691
 Prefab:
   m_ObjectHideFlags: 0
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 114348188463143680, guid: bd94bc2bbd3497d4c8cc43f6d36b2080,
     type: 2}
   m_PrefabInternal: {fileID: 3977587}
-  m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
 --- !u!114 &1585517064 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114517914196738316, guid: bd94bc2bbd3497d4c8cc43f6d36b2080,
