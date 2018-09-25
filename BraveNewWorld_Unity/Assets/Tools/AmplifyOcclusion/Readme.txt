@@ -1,8 +1,8 @@
 About
 
-  Amplify Occlusion (c) Amplify Creations, Lda. All rights reserved.
+  Amplify Occlusion 2 (c) Amplify Creations, Lda. All rights reserved.
 
-  Amplify Occlusion is a Robust Ambient Occlusion extension for Unity Pro
+  Amplify Occlusion 2 is a Robust Ambient Occlusion extension for Unity
 	 
   Redistribution of Amplify Occlusion is frowned upon. If you want to share the 
   software, please refer others to the official download page:
@@ -18,15 +18,20 @@ Description
   and combines it into a all-in-one flexible Unity package.
 	
 Features
-	
-  * Robust high-quality SSAO solution
+
+  * Based on Ground Truth Ambient Occlusion
+  * PS4, Xbox One and Switch compatible
+  * VR Single and Multi-pass support
+  * Up to 2X faster than Amplify Occlusion 1.0
+  * Revamped Spatial and Temporal Filters
+  * Dramatically Higher-Quality
+  * Higher Flexibility
+  * Under 1 ms on a mid-range GPU at Full HD
   * Accurate and fast-performing
   * Deferred and Forward Rendering
-  * Deferred-path PBR compatible injection mode
+  * PBR compatible injection mode
   * Superior occlusion approximation
-  * Stable and scalable
   * Extensive blur and intensity controls
-  * Full Source Code
 
 Supported Platforms
 
@@ -36,12 +41,12 @@ Minimum Requirements
 
   Software
 
-    Unity 5+
+    Unity 5.6.0+
 
 Quick Guide
   
   1) Select and apply “Image Effects/Amplify Occlusion” to your main camera.
-  2) Adjust the intensity and radius.
+  2) Adjust the Intensity and Radius.
   3) Adjust the blur values until you are satisfied with the results.
   
 Documentation
