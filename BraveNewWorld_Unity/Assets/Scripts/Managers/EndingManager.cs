@@ -10,6 +10,8 @@ public class EndingManager : MonoBehaviour {
     public Animator finalLiftDoors;
     public Radio radio;
     public Megaphone mega;
+    public Alarm alarm;
+    public digiCode digicode;
 
     public GameObject redLightHolder;
     public GameObject whiteLightHolder;
@@ -42,6 +44,8 @@ public class EndingManager : MonoBehaviour {
         mega.TurnOffMegaphone();
 
         TurnLightRed();
+        alarm.TurnOffAlarm();
+        digicode.TurnOffDigicode();
     }
 
     public void StartCorporateEnding()
@@ -54,6 +58,9 @@ public class EndingManager : MonoBehaviour {
         mega.TurnOffMegaphone();
 
         TurnLightWhite();
+
+        alarm.TurnOffAlarm();
+        digicode.TurnOffDigicode();
     }
 
 

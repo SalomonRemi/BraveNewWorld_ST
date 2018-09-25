@@ -13,7 +13,12 @@ public class Alarm : MonoBehaviour
 
     public GameObject alarmSound;
 
-    //private MeshCollider col;
+    private MeshCollider col;
+
+    private void Start()
+    {
+        col = GetComponent<MeshCollider>();
+    }
 
     public void TurnOnAlarm() //CALL ON ELECTRIC PANNEL GOOD
     {
@@ -39,5 +44,10 @@ public class Alarm : MonoBehaviour
         alarmSound.SetActive(true);
 
         EndingManager.instance.StartKreepEnding(); //START ENDING
+    }
+
+    public void TurnOffAlarm()
+    {
+        col.enabled = false;
     }
 }

@@ -47,6 +47,19 @@ public class digiCode : MonoBehaviour {
         }
     }
 
+    public void TurnOffDigicode()
+    {
+        foreach (GameObject btn in keyButtons)
+        {
+            MeshCollider _col = btn.GetComponent<MeshCollider>();
+
+            if (_col != null)
+            {
+                _col.enabled = false;
+            }
+        }
+    }
+
     public void validateInput()
     {
         if (MissionManager.instance.inExePuzzle)
