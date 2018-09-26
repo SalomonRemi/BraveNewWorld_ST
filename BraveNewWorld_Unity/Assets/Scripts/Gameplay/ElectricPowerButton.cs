@@ -8,7 +8,7 @@ public class ElectricPowerButton : MonoBehaviour {
     public List<GameObject> objectList;
     public Animator buttonHolderAnim;
 
-    private bool isActivated;
+    [HideInInspector] public bool isActivated;
     private Collider col;
 
     private void Start()
