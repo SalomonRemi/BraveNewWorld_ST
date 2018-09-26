@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DigitalRuby.SoundManagerNamespace;
+using UnityEngine.UI;
 
 public class EndingManager : MonoBehaviour {
 
+    [Header("Trigger settings")]
     public static EndingManager instance = null;
     public Animator hiddenRoomDoorAnim;
     public Animator finalLiftDoors;
@@ -12,9 +14,13 @@ public class EndingManager : MonoBehaviour {
     public Megaphone mega;
     public Alarm alarm;
     public digiCode digicode;
-
     public GameObject redLightHolder;
     public GameObject whiteLightHolder;
+
+    [Header("Ending settings")]
+    public Image fadeImage;
+    private Fade fade;
+    private MenuManager mm;
 
     private bool goToNextStep;
     [HideInInspector] public bool endDialogTrigger;
@@ -31,6 +37,12 @@ public class EndingManager : MonoBehaviour {
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        fade = fadeImage.gameObject.GetComponent<Fade>();
+        mm = FindObjectOfType<MenuManager>();
     }
 
 
@@ -101,6 +113,7 @@ public class EndingManager : MonoBehaviour {
         yield return new WaitForSeconds(1f);
 
         finalLiftDoors.SetBool("doClose", true);
+        StartCoroutine(StartEndingLoading(12f));
 
         //AudioManager.instance.PlayMusic("outroKreepDialog02");
 
@@ -139,7 +152,19 @@ public class EndingManager : MonoBehaviour {
         finalLiftDoors.SetBool("doClose", true);
         FindObjectOfType<DialogSystem>().StartDialogue(dialogue1);
 
+        StartCoroutine(StartEndingLoading(3f));   
+
         //AudioManager.instance.PlayMusic("outroCorpoDialog01");
+
+        yield return null;
+    }
+
+    IEnumerator StartEndingLoading(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        fade.doFadingOut = false;
+        mm.LoadSmallLevel("Credits");
 
         yield return null;
     }
