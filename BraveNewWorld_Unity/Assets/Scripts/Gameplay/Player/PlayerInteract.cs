@@ -83,6 +83,10 @@ public class PlayerInteract : MonoBehaviour {
 						hit.transform.gameObject.GetComponentInParent<LockerNum>().DecreaseNumber();
                         AudioManager.instance.PlaySound("lockerButton");
                     }
+                    if (hit.transform.gameObject.CompareTag("toiletFlush"))
+                    {
+                        hit.transform.gameObject.GetComponentInParent<Toilet>().DoFlush();
+                    }
                     if (hit.transform.gameObject.CompareTag("slider"))
                     {
                         if (hit.transform.gameObject.GetComponent<PuzzleSlider>().isValidate) hit.transform.gameObject.GetComponent<PuzzleSlider>().ValidateNumber();
@@ -279,6 +283,16 @@ public class PlayerInteract : MonoBehaviour {
 
                     interactionVerbText.gameObject.SetActive(true);
                     interactionVerbText.text = "Flip";
+
+                    interactInputImage.gameObject.SetActive(true);
+                }
+                else if (hitInfo.transform.gameObject.CompareTag("toiletFlush"))
+                {
+                    interactionObjectText.gameObject.SetActive(true);
+                    interactionObjectText.text = "Toilet";
+
+                    interactionVerbText.gameObject.SetActive(true);
+                    interactionVerbText.text = "Interact";
 
                     interactInputImage.gameObject.SetActive(true);
                 }

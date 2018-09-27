@@ -8,15 +8,15 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
+  m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1698280941920204}
-  m_IsPrefabParent: 1
+  m_IsPrefabAsset: 1
 --- !u!1 &1698280941920204
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 6
   m_Component:
   - component: {fileID: 4672025424928140}
   - component: {fileID: 114732929354561534}
@@ -31,7 +31,7 @@ GameObject:
 --- !u!4 &4672025424928140
 Transform:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1698280941920204}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000058114523}
@@ -44,7 +44,7 @@ Transform:
 --- !u!114 &114048709272493256
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1698280941920204}
   m_Enabled: 1
@@ -65,7 +65,7 @@ MonoBehaviour:
 --- !u!114 &114732929354561534
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1698280941920204}
   m_Enabled: 1
@@ -113,16 +113,16 @@ MonoBehaviour:
   recapText: {fileID: 0}
   flipper: {fileID: 0}
   digiTxt: {fileID: 0}
-  puzzle1RandTalkTime: 30
-  puzzle1HintTalkTime: 60
-  puzzle2RandTalkTime: 30
-  puzzle2HintTalkTime: 60
-  puzzle4RandTalkTime: 50
-  puzzle4HintTalkTime: 80
-  puzzle5RandTalkTime: 50
-  puzzle5HintTalkTime: 90
-  puzzle7RandTalkTime: 50
-  puzzle7HintTalkTime: 90
+  puzzle1RandTalkTime: 60
+  puzzle1HintTalkTime: 90
+  puzzle2RandTalkTime: 60
+  puzzle2HintTalkTime: 90
+  puzzle4RandTalkTime: 120
+  puzzle4HintTalkTime: 200
+  puzzle5RandTalkTime: 100
+  puzzle5HintTalkTime: 210
+  puzzle7RandTalkTime: 110
+  puzzle7HintTalkTime: 230
   debugTransform: {fileID: 0}
   agent: {fileID: 0}
   digicodeMat: {fileID: 2100000, guid: 06500a9141569dd48bd4cff919be9439, type: 2}

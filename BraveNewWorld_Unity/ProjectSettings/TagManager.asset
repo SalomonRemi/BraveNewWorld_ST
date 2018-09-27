@@ -24,6 +24,7 @@ TagManager:
   - radioButton
   - megaphoneButton
   - alarmButton
+  - toiletFlush
   layers:
   - Default
   - TransparentFX

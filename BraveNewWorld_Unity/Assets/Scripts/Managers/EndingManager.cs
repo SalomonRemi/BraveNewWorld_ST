@@ -139,6 +139,7 @@ public class EndingManager : MonoBehaviour {
         dialogue1.sentences.Add("Kreep et moi-même vous remercions pour votre service, vous n’avez pas idée de l’aide précieuse que vous nous avez fourni !");
         dialogue1.sentences.Add("Avancez jusqu’au bout du couloir et prenez l’ascenceur, je vous attendrai au 5ème étage nous avons à discuter.");
         dialogue1.sentences.Add("Je vous laisse je dois régler 'quelque chose', à tout à l’heure !");
+        FindObjectOfType<DialogSystem>().StartDialogue(dialogue1);
 
         while (goToNextStep)
         {

@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4891129397762496}
   - component: {fileID: 33354979431140144}
   - component: {fileID: 23330892231512376}
+  - component: {fileID: 65840857461212180}
   m_Layer: 0
   m_Name: Ben_low
   m_TagString: Untagged
@@ -83,3 +84,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1079553301303226}
   m_Mesh: {fileID: 4300000, guid: 34083e923deac7641b8ae8bb93445efe, type: 3}
+--- !u!65 &65840857461212180
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1079553301303226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5201364, y: 0.39095443, z: 0.3552407}
+  m_Center: {x: 0.0000076293945, y: 0.0074767764, z: 0}
