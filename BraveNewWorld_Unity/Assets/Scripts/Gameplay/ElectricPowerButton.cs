@@ -8,6 +8,8 @@ public class ElectricPowerButton : MonoBehaviour {
     public List<GameObject> objectList;
     public Animator buttonHolderAnim;
 
+    public GameObject DeathFogObject;
+
     [HideInInspector] public bool isActivated;
     private Collider col;
 
@@ -29,6 +31,8 @@ public class ElectricPowerButton : MonoBehaviour {
             }
 
             isActivated = true;
+
+            DeathFogObject.SetActive(false);
         }
 
         col.enabled = false;

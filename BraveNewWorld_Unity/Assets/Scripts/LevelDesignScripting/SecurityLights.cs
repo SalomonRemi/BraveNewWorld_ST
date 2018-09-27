@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class SecurityLights : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public ElectricPowerButton ep;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            ep.EnableObjects();
+        }
+    }
 }
