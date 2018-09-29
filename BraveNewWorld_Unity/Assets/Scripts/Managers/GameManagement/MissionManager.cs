@@ -154,13 +154,13 @@ public class MissionManager : MonoBehaviour {
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.M))
-        //{
-        //    StopAllCoroutines();
-        //    AudioManager.instance.StopMusic();
-        //    StartCoroutine(startMission());
-        //    player.transform.position = debugTransform.position;
-        //}
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            StopAllCoroutines();
+            AudioManager.instance.StopMusic();
+            StartCoroutine(startMission());
+            player.transform.position = debugTransform.position;
+        }
 
         if (doScrolling)
         {

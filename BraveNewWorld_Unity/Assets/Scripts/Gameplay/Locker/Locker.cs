@@ -12,10 +12,22 @@ public class Locker : MonoBehaviour {
 
     [HideInInspector] public bool codeOk;
 
+    [Header("Distributor")]
+    public bool isDisctributor;
+    public Transform pos;
+
+    public GameObject redFood;
+    public GameObject greenFood;
+    public GameObject soma;
+
     private bool feedbackDone;
 
     private bool findCode1;
     private bool findCode2;
+
+    private bool gotRedFood;
+    private bool gotGreenFood;
+    private bool gotSoma;
 
 
     private void Update()
@@ -24,10 +36,24 @@ public class Locker : MonoBehaviour {
         {
             CheckIfGoodCode();
         }
-
         if(!findCode2)
         {
             CheckIfGoodCode2();
+        }
+        if(isDisctributor)
+        {
+            if (!gotGreenFood)
+            {
+                CheckGreenFood();
+            }
+            if (!gotRedFood)
+            {
+                CheckRedFood();
+            }
+            if (!gotSoma)
+            {
+                CheckSoma();
+            }
         }
     }
 
@@ -72,6 +98,75 @@ public class Locker : MonoBehaviour {
         }
     }
 
+    //DISTRIBUTOR///////////////////////////////////////////////////////////////////
+    private void CheckRedFood()
+    {
+        int validateNumber = 0;
+        for (int i = 0; i < lockerNum.Count; i++)
+        {
+            LockerNum ln = lockerNum[i].GetComponent<LockerNum>();
+            if (ln.isRedFoodNumber) validateNumber++;
+        }
+
+        if (validateNumber == lockerNum.Count)
+        {
+            codeOk = true;
+            gotRedFood = true;
+            Distrib(0);
+        }
+    }
+    private void CheckGreenFood()
+    {
+        int validateNumber = 0;
+        for (int i = 0; i < lockerNum.Count; i++)
+        {
+            LockerNum ln = lockerNum[i].GetComponent<LockerNum>();
+            if (ln.isGreenFoodNumber) validateNumber++;
+        }
+
+        if (validateNumber == lockerNum.Count)
+        {
+            codeOk = true;
+            gotGreenFood = true;
+            Distrib(1);
+        }
+    }
+    private void CheckSoma()
+    {
+        int validateNumber = 0;
+        for (int i = 0; i < lockerNum.Count; i++)
+        {
+            LockerNum ln = lockerNum[i].GetComponent<LockerNum>();
+            if (ln.isSomaNumber) validateNumber++;
+        }
+
+        if (validateNumber == lockerNum.Count)
+        {
+            codeOk = true;
+            gotSoma = true;
+            Distrib(2);
+        }
+    }
+
+    private void Distrib(int num)
+    {
+        if(num == 0)
+        {
+            Instantiate(redFood, pos.position, Quaternion.identity);
+        }
+        if (num == 1)
+        {
+            Instantiate(greenFood, pos.position, Quaternion.identity);
+        }
+        if (num == 2)
+        {
+            Instantiate(soma, pos.position, Quaternion.identity);
+        }
+        AudioManager.instance.PlaySound("distribution");
+    }
+
+
+    //feedbacks///////////////////////////////////////////////////////////////////////////////
     public IEnumerator Feedback(Animator anim, string soundName, bool doDialogs)
     {
         anim.SetBool("open", true);

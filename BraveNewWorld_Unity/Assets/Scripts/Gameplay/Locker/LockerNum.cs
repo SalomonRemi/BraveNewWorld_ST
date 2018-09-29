@@ -8,8 +8,15 @@ public class LockerNum : MonoBehaviour {
     public int goodNumber;
     public int goodNumber2;
 
+    public int redFoodNumber;
+    public int greenFoodNumber;
+    public int somaNumber;
+
     [HideInInspector] public bool isGoodNumber;
     [HideInInspector] public bool isGoodNumber2;
+    [HideInInspector] public bool isRedFoodNumber;
+    [HideInInspector] public bool isGreenFoodNumber;
+    [HideInInspector] public bool isSomaNumber;
 
     private int actualNumber = 1;
     private TextMeshPro displayText;
@@ -26,11 +33,18 @@ public class LockerNum : MonoBehaviour {
     {
         displayText.text = actualNumber.ToString();
 
-        if (goodNumber == actualNumber) isGoodNumber = true;
+        if (actualNumber == goodNumber) isGoodNumber = true;
         else isGoodNumber = false;
 
-        if (goodNumber2 == actualNumber) isGoodNumber2 = true;
+        if (actualNumber == goodNumber2) isGoodNumber2 = true;
         else isGoodNumber2 = false;
+
+        if (actualNumber == redFoodNumber) isRedFoodNumber = true;
+        else isRedFoodNumber = false;
+        if (actualNumber == greenFoodNumber) isGreenFoodNumber = true;
+        else isGreenFoodNumber = false;
+        if (actualNumber == somaNumber) isSomaNumber = true;
+        else isSomaNumber = false;
     }
 
 
