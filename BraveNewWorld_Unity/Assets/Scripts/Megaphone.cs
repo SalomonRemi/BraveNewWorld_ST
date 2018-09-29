@@ -74,20 +74,20 @@ public class Megaphone : MonoBehaviour
 
         if (angryCounter == 0)
         {
-            dialogue1.sentences.Add("Tiens tu es là ? Eh bien on dirait que tu as trouvé Oscar ! Bien joué !");
-            dialogue1.sentences.Add("Dis moi maintenant que tu es là tu ne voudrais pas jeter un oeil dans la pièce ?");
-            dialogue1.sentences.Add("Tu nous rendrais un grand service si tu trouvais l’identifiant de Kreep, c’est un ancien collègue qui a perdu sa fiche d’identité, j’aimerais la lui signaler !");
+            dialogue1.sentences.Add("Boss : Tiens tu es là ? Eh bien on dirait que tu as trouvé Oscar ! Bien joué !");
+            dialogue1.sentences.Add("Boss : Dis moi maintenant que tu es là tu ne voudrais pas jeter un oeil dans la pièce ?");
+            dialogue1.sentences.Add("Boss : Tu nous rendrais un grand service si tu trouvais l’identifiant de Kreep, c’est un ancien collègue qui a perdu sa fiche d’identité, j’aimerais la lui signaler !");
 
             AudioManager.instance.PlaySound("coropoDialog01");
         }
         else if (angryCounter == 1)
         {
-            dialogue1.sentences.Add("*Erm* Ces vieux mégaphones ne sont pas fiables, faites vite Wilson, trouvez l’identifiant de mon ami Kreep, l’usine vous en sera reconnaissante.");
+            dialogue1.sentences.Add("Boss : *Erm* Ces vieux mégaphones ne sont pas fiables, faites vite Wilson, trouvez l’identifiant de mon ami Kreep, l’usine vous en sera reconnaissante.");
             AudioManager.instance.PlaySound("coropoDialog02");
         }
         else if (angryCounter == 2)
         {
-            dialogue1.sentences.Add("Ca n’arrête pas de couper, je vais commencer à croire que vous le faites exprès ! Transmettez-nous l’identifiant de Kreep ou nous viendrons le faire à votre place.");
+            dialogue1.sentences.Add("Boss : Ca n’arrête pas de couper, je vais commencer à croire que vous le faites exprès ! Transmettez-nous l’identifiant de Kreep ou nous viendrons le faire à votre place.");
             AudioManager.instance.PlaySound("coropoDialog03");
         }
         FindObjectOfType<DialogSystem>().StartDialogue(dialogue1);

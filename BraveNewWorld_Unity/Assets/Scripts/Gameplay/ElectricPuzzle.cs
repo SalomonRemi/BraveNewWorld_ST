@@ -8,6 +8,7 @@ public class ElectricPuzzle : MonoBehaviour {
 
     public static ElectricPuzzle instance = null;
 
+    [Header("Puzzles Settigns")]
     public List<PuzzleSlider> sliderList;
     public TextMeshPro text;
     public GameObject validateButton;
@@ -20,22 +21,29 @@ public class ElectricPuzzle : MonoBehaviour {
     public int megaphoneCode;
     public GameObject megaphoneNumberDisplay;
     public Megaphone megaphone;
+    public GameObject megaCable;
 
     [Header("Radio")]
     public int radioCode;
     public GameObject radioNumberDisplay;
     public Radio radio;
+    public GameObject radioCable;
 
     [Header("Digicode")]
     public int digicodeCode;
     public GameObject digicodeNumberDisplay;
     public DigicodePuzzle digicode;
+    public GameObject digiCable;
 
     [Header("Alarm")]
     public int alarmCode;
     public GameObject alarmNumberDisplay;
     public Alarm alarm;
-    
+    public GameObject alarmCable;
+
+    [Header("Cables Settigns")]
+    public Material cableOnMat;
+
 
     private List<int> sliderOn;
 
@@ -87,6 +95,7 @@ public class ElectricPuzzle : MonoBehaviour {
             megaphoneNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
             AudioManager.instance.PlaySound("digiOkSound");
             megaphone.TurnOnMegaphone();
+            megaCable.GetComponent<MeshRenderer>().material = cableOnMat;
         }
         else if (multiplicationResult == radioCode)
         {
@@ -95,6 +104,7 @@ public class ElectricPuzzle : MonoBehaviour {
             radioNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
             radio.TurnOnRadio();
             AudioManager.instance.PlaySound("digiOkSound");
+            radioCable.GetComponent<MeshRenderer>().material = cableOnMat;
         }
         else if (multiplicationResult == alarmCode)
         {
@@ -103,6 +113,7 @@ public class ElectricPuzzle : MonoBehaviour {
             alarmNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
             AudioManager.instance.PlaySound("digiOkSound");
             alarm.TurnOnAlarm();
+            alarmCable.GetComponent<MeshRenderer>().material = cableOnMat;
         }
         else if (multiplicationResult == digicodeCode)
         {
@@ -111,6 +122,7 @@ public class ElectricPuzzle : MonoBehaviour {
             digicodeNumberDisplay.GetComponent<MeshRenderer>().material.color = Color.green;
             AudioManager.instance.PlaySound("digiOkSound");
             digicode.TurnOnDigi();
+            megaCable.GetComponent<MeshRenderer>().material = cableOnMat;
         }
         else
         {
