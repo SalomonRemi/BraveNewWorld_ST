@@ -78,7 +78,7 @@ GameObject:
   m_TagString: document
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1418050628457288
 GameObject:
@@ -671,7 +671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 408a808632c65fd47a1d9eb8c5871346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doc: {fileID: 21300000, guid: 754366b9ff32b8848b8588811bd26bbd, type: 3}
+  doc: {fileID: 21300000, guid: 27e7b4afe2904e4479da684ba8a07562, type: 3}
   docObj: {fileID: 0}
   displayName: Incident notice
 --- !u!114 &114412181175607396
@@ -749,7 +749,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 754366b9ff32b8848b8588811bd26bbd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27e7b4afe2904e4479da684ba8a07562, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
