@@ -340,7 +340,7 @@ public class MissionManager : MonoBehaviour {
 		FindObjectOfType<DialogSystem>().StartDialogue(dialogue);
 
         StartCoroutine(DisplayOrder(12f));
-        orderText = "Ouvrez les portes de la salle de décantation et du dépôt des embryons.";
+        orderText = "Ouvrez les portes de la salle de decantation et du depot des embryons.";
 
         yield return new WaitForSeconds(1f);
 
@@ -415,7 +415,7 @@ public class MissionManager : MonoBehaviour {
         AudioManager.instance.PlayMusic("puzzle2");
 
         StartCoroutine(DisplayOrder(11f));
-        orderText = "Localisez les batteries dans le manuel puis déverrouillez un accès pour se débarrasser de ce matériel défecteux.";
+        orderText = "Localisez les batteries dans le manuel puis deverrouillez un acces pour se debarrasser de ce materiel defecteux.";
 
         yield return new WaitForSeconds(2f);
 
@@ -465,7 +465,7 @@ public class MissionManager : MonoBehaviour {
         AudioManager.instance.PlayMusic("puzzle3_1");
 
         StartCoroutine(DisplayOrder(11f));
-        orderText = "Écoutez les ordres du directeur.";
+        orderText = "Ecoutez les ordres du directeur.";
 
         while (!canStartExePuzzle)
         {
@@ -523,7 +523,7 @@ public class MissionManager : MonoBehaviour {
         AudioManager.instance.PlayMusic("puzzle4");
 
         StartCoroutine(DisplayOrder(11f));
-        orderText = "Trouvez la facture arrivée il y a 5 jours. La livraison est arrivée en salle de fécondation, permettez lui l'accès jusqu'à la salle concernée.";
+        orderText = "Trouvez la facture arrivee il y a 5 jours. La livraison est arrivee en salle de fecondation, permettez lui l'acces jusqu'a la salle concernee.";
 
         yield return new WaitForSeconds(22f);
 
@@ -590,7 +590,7 @@ public class MissionManager : MonoBehaviour {
         FindObjectOfType<DialogSystem>().StartDialogue(dialogue);
 
         StartCoroutine(DisplayOrder(12f));
-        orderText = "Trouvez le numéro de matricule de Jack, et rentrez le dans sur le digicode.";
+        orderText = "Trouvez le numero de matricule de Jack, et rentrez le dans sur le digicode.";
 
         yield return new WaitForSeconds(16f);
 
@@ -614,7 +614,7 @@ public class MissionManager : MonoBehaviour {
 		doorAmmount = 7;
 
 		StartCoroutine(DisplayOrder(1f));
-		orderText = "Localisez Jack et ouvrez lui un accès au self. Son planning se trouve dans le manuel.";
+		orderText = "Localisez Jack et ouvrez lui un acces au self. Son planning se trouve dans le manuel.";
 
 		Dialogue dialogue2 = new Dialogue();
 		dialogue2.sentences.Add("Bien vous l'avez localisé, ouvrez lui les portes vers le self.");
@@ -672,7 +672,7 @@ public class MissionManager : MonoBehaviour {
         AudioManager.instance.PlayMusic("puzzle6");
 
         StartCoroutine(DisplayOrder(13f));
-        orderText = "Écoutez les ordres du directeur.";
+        orderText = "Ecoutez les ordres du directeur.";
 
         while (!canStartExePuzzle)
         {
@@ -803,13 +803,13 @@ public class MissionManager : MonoBehaviour {
         AudioManager.instance.PlayMusic("puzzle8_1");
 
         StartCoroutine(DisplayOrder(10f));
-        orderText = "écoutez les ordres du directeur.";
+        orderText = "Ecoutez les ordres du directeur.";
 
         while (!canStartExePuzzle)
         {
             yield return null;
         }
-
+        
         ep.StartPuzzle(puzzleNum);
 
         while (!ep.puzzleDone)
