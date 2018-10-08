@@ -165,7 +165,7 @@ public class EndingManager : MonoBehaviour {
         yield return new WaitForSeconds(time);
 
         fade.doFadingOut = false;
-        mm.LoadSmallLevel("Credits");
+        mm.LoadSmallLevel("EndSceneInProgress");
 
         yield return null;
     }
