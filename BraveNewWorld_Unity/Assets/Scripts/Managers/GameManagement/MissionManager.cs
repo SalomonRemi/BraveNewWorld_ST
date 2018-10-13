@@ -144,7 +144,7 @@ public class MissionManager : MonoBehaviour {
         ep = GetComponent<ExePuzzle>();
 
         StartCoroutine(startIntroduction());
-        //StartCoroutine(scrollingBabies());
+        StartCoroutine(scrollingBabies());
 
 		agent.SetActive (false);
 
@@ -158,7 +158,7 @@ public class MissionManager : MonoBehaviour {
         {
             StopAllCoroutines();
             AudioManager.instance.StopMusic();
-            StartCoroutine(startMission());
+            StartCoroutine(mission4());
             player.transform.position = debugTransform.position;
         }
 
@@ -168,7 +168,7 @@ public class MissionManager : MonoBehaviour {
 
             if(counter >= 3.25f)
             {
-				Instantiate(usinePrefabList[Random.Range(0, 3)], instantiateTransform.position, Quaternion.Euler(new Vector3(-180,-135,0)));
+				Instantiate(usinePrefabList[Random.Range(0, 3)], instantiateTransform.position, Quaternion.Euler(new Vector3(180,-90,0)));
                 counter = 0;
             }
         }
@@ -479,19 +479,19 @@ public class MissionManager : MonoBehaviour {
             yield return null;
         }
 
-        keypad.ComfirmInput(); // APPELLE COMFIRMINPUT POUR FEEDBAKC FLASH ET SON
+        keypad.ComfirmInput();
 
         yield return new WaitForSeconds(1f);
 
-        AudioManager.instance.StopMusic();
-        AudioManager.instance.PlayMusic("puzzle3_2");
+        //AudioManager.instance.StopMusic();
+        //AudioManager.instance.PlayMusic("puzzle3_2");
 
-        Dialogue dialogue1 = new Dialogue();
-        dialogue1.sentences.Add("Merci Wilson. Toujours aucune nouvelles d'Oscar... je commence tout simplement à croire qu'il s'est volatilisé. Nous reviendros à ce cas plus tard.");
+        //Dialogue dialogue1 = new Dialogue();
+        //dialogue1.sentences.Add("Merci Wilson. Toujours aucune nouvelles d'Oscar... je commence tout simplement à croire qu'il s'est volatilisé. Nous reviendros à ce cas plus tard.");
 
-        FindObjectOfType<DialogSystem>().StartDialogue(dialogue1);
+        //FindObjectOfType<DialogSystem>().StartDialogue(dialogue1);
 
-        yield return new WaitForSeconds(10f);
+        //yield return new WaitForSeconds(10f);
 
         doorNums.Clear();
         resestMission();
@@ -513,7 +513,7 @@ public class MissionManager : MonoBehaviour {
         giveHintRoutine = StartCoroutine(GiveHint(puzzleNum, puzzle4HintTalkTime));
 
         Dialogue dialogue1 = new Dialogue ();
-        dialogue1.sentences.Add ("Très bien, je sens que vous avez compris ce que l’entreprise attend de vous.\n Vous n’êtes pas comme votre prédécesseur.");
+        dialogue1.sentences.Add ("Je sens que vous avez compris ce que l’entreprise attend de vous.\n Vous n’êtes pas comme votre prédécesseur.");
 		dialogue1.sentences.Add ("Bref, on vient de me faire parvenir qu’une livraison à été facturée \n et stockée en salle de fécondation, il y a 5 jours.");
 		dialogue1.sentences.Add ("Avec tout ça, personne n’a eu le temps de s’en occuper. \n Trouvez sa destination et assurez son transfert.");
 
@@ -525,12 +525,15 @@ public class MissionManager : MonoBehaviour {
         StartCoroutine(DisplayOrder(11f));
         orderText = "Trouvez la facture arrivee il y a 5 jours. La livraison est arrivee en salle de fecondation, permettez lui l'acces jusqu'a la salle concernee.";
 
-        yield return new WaitForSeconds(22f);
+        yield return new WaitForSeconds(45f);
 
         Dialogue dialogue2 = new Dialogue();
         dialogue2.sentences.Add("On dirait qu’Oscar a encore oublié des documents officiels dans son appartement…");
         dialogue2.sentences.Add("Je vous ouvre la porte mais veillez à ne pas toucher aux documents personnels d’Oscar, vous ne voudriez pas violer son intimité n’est-ce pas ?");
         FindObjectOfType<DialogSystem>().StartDialogue(dialogue2);
+
+        //AudioManager.instance.StopMusic();
+        //AudioManager.instance.PlayMusic("puzzle4");
 
         yield return new WaitForSeconds(6f);
 
@@ -973,7 +976,8 @@ public class MissionManager : MonoBehaviour {
 
         yield return new WaitForSeconds(fadeTime + timeInElevator * 0.1f);
 
-		Destroy (elevator);
+        yield return new WaitForSeconds(5f);
+        Destroy(elevator);
     }
 
 
