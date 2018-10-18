@@ -13,6 +13,6 @@ public class pauseScript : MonoBehaviour {
 	}
 
 	public void continuetoPlay(){
-		GameManager.instance.quitPause = true;
+        GameManager.instance.DoPause();
 	}
 }

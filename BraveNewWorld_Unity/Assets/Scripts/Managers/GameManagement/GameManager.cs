@@ -60,37 +60,16 @@ public class GameManager : MonoBehaviour {
 
 	void Update ()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
         if ((Input.GetKeyDown (KeyCode.Escape) || quitPause))//&& !documentOpen && !manualVisible
         {
-            if (isPaused) // Si le jeu est en pause, je reprend
-            {
-				quitPause = false;
-				Time.timeScale = 1f;
-				isPaused = false;
-				menuScreen.SetActive (false);
-				Cursor.lockState = CursorLockMode.Locked;
-				Cursor.visible = false;
-				player.GetComponent<FPSController> ().enabled = true;
-                AudioManager.instance.ChangePitchByTime();
-			}
-            else // Si je met le jeu en pause avec ESCAPE, ou que je suis en pause, je me met en pause
-            {
-				Time.timeScale = 0f;
-				isPaused = true;
-				menuScreen.SetActive (true);
-				Cursor.lockState = CursorLockMode.None;
-				Cursor.visible = true;
-				player.GetComponent<FPSController> ().enabled = false;
-                AudioManager.instance.ChangePitchByTime();
-            }
+            DoPause();
 		}
 
-		if (!isPaused)
+        if (!isPaused)
         {
-			if (manualVisible) // GERE LES MANUELS
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            if (manualVisible) // GERE LES MANUELS
             {
 				if (pagesSprites.Length != 0)
                 {
@@ -178,6 +157,35 @@ public class GameManager : MonoBehaviour {
         }
 	}
 
+    public void DoPause()
+    {
+        if (isPaused) // Si le jeu est en pause, je reprend
+        {
+            quitPause = false;
+            Time.timeScale = 1f;
+            menuScreen.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            player.GetComponent<FPSController>().enabled = true;
+            AudioManager.instance.ChangePitchByTime();
+            isPaused = false;
+            Debug.Log("pause turn off");
+        }
+        else // Si je met le jeu en pause avec ESCAPE, ou que je suis en pause, je me met en pause
+        {
+            Time.timeScale = 0f;
+            menuScreen.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            player.GetComponent<FPSController>().enabled = false;
+            AudioManager.instance.ChangePitchByTime();
+            isPaused = true;
+            Debug.Log("pause turn on");
+        }
+        Debug.Log("method called");
+    }
+
+    
 	void addPages()
     {
 		if (!added)
