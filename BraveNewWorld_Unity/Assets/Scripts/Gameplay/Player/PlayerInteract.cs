@@ -33,6 +33,8 @@ public class PlayerInteract : MonoBehaviour {
 
 	private FPSController fpsController;
 
+    private bool didRandtalk9;
+
     
 	void Start()
 	{
@@ -322,6 +324,21 @@ public class PlayerInteract : MonoBehaviour {
             interactionVerbText.gameObject.SetActive(false);
             interactInputImage.gameObject.SetActive(false);
             interactionObjectText.gameObject.SetActive(false);
+        }
+
+        if (Physics.Raycast(ray, out hitInfo, 50f))
+        {
+            if(hitInfo.collider.gameObject.name == "Los_Randtalk9" && !didRandtalk9 && GameManager.instance.canLOS)
+            {
+                Dialogue dialogue1 = new Dialogue();
+                dialogue1.sentences.Add("Il vaut parfois mieux ne pas regarder sous la surface, n’est-ce pas ?");
+                FindObjectOfType<DialogSystem>().StartDialogue(dialogue1);
+
+                AudioManager.instance.StopMusic();
+                AudioManager.instance.PlayMusic("hint1");
+
+                didRandtalk9 = true;
+            }
         }
     }
 }
