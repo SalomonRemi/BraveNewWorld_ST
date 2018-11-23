@@ -25,6 +25,7 @@ TagManager:
   - megaphoneButton
   - alarmButton
   - toiletFlush
+  - ARGObject
   layers:
   - Default
   - TransparentFX
@@ -37,7 +38,7 @@ TagManager:
   - Interactible
   - Lights
   - LosDialogCollider
-  - 
+  - PostProcessing
   - 
   - 
   - 
