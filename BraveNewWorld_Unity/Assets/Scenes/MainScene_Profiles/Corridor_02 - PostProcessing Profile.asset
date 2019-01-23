@@ -129,7 +129,7 @@ MonoBehaviour:
     value: {fileID: 0}
   tonemapper:
     overrideState: 1
-    value: 2
+    value: 3
   toneCurveToeStrength:
     overrideState: 0
     value: 0
